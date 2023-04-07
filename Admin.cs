@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.VisualBasic.ApplicationServices;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -31,7 +32,7 @@ namespace Login_Window
             {
                 listBox2.Items.Add(Coursedatabase[i]);
             }
-         
+
 
             string[] lines = System.IO.File.ReadAllLines(@"C:\Users\turtl\Desktop\UserDatabase.txt");
             List<String> Userdatabase = new List<String>();
@@ -44,7 +45,7 @@ namespace Login_Window
                 Console.WriteLine("\n" + line);
 
             }
-            for (int i = 0; i < Userdatabase.Count - 1; i++)
+            for (int i = 0; i < Userdatabase.Count(); i++)
             {
                 string[] Userstring = Userdatabase[i].Split(' ');
                 string username = Userstring[0];
@@ -62,9 +63,16 @@ namespace Login_Window
 
                 //Console.WriteLine("Key {0}, Username: {1}, Password: {2}, First name: {3}, Middle name: {4}, Last name: {5}, Status {6}\n", Userlist[i].usrs, Userlist[i].usrs.usrname, Userlist[i].usrs.pswd, Userlist[i].usrs.fname, Userlist[i].usrs.mname, Userlist[i].usrs.lname, Userlist[i].usrs.s);
             }
-            for (int i = 0; i < Userdatabase.Count - 1; i++)
+
+            // This is loading in the users into the correct places
+            for (int i = 0; i < Userdatabase.Count() - 1; i++)
             {
-                listBox1.Items.Add(Userlist[i].usrs.usrname + " " + Userlist[i].usrs.s);
+                if ((Userlist[i].usrs.s == "admin"))
+                { listBox1.Items.Add(Userlist[i].usrs.usrname + " " + Userlist[i].usrs.s); }
+                else if (Userlist[i].usrs.s == "faculty")
+                { listBox3.Items.Add(Userlist[i].usrs.usrname + " " + Userlist[i].usrs.s); }
+                else { listBox4.Items.Add(Userlist[i].usrs.usrname + " " + Userlist[i].usrs.s); }
+
             }
 
         }
@@ -76,6 +84,89 @@ namespace Login_Window
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            // *************** SHOULD ADD THE PROFS NAME TO THE ROSTER TOO *********************
+
+            listBox6.Items.Clear();
+            string curCourse = listBox2.SelectedItem.ToString();
+
+            string courseNum = curCourse.Substring(0, curCourse.IndexOf(' '));
+            //string courseName = curCourse.Substring(curCourse.IndexOf(courseNum), curCourse.IndexOf(' '));
+            //string profName = "Instructor: " + curCourse.Substring(curCourse.IndexOf(courseName), curCourse.IndexOf(' '));
+            listBox6.Items.Add(courseNum); //Prints out the class number to the roster before displaying the students
+            //listBox6.Items.Add(profName);
+
+            //string[] OGCourseDataBase = System.IO.File.ReadAllLines(@"C:\Users\katie\OneDrive\Desktop\Databases SE\OrginalCourseHistoryDatabase.txt");
+            string[] CourseHisDataBase = System.IO.File.ReadAllLines(@"C:\Users\katie\OneDrive\Desktop\Databases SE\CourseHistoryDatabase.txt");
+            List<string> addedCoursesDataBase = new List<string>();
+
+            foreach (string line in CourseHisDataBase)
+            {
+                string[] splitLines = line.Split(' ');
+                if (splitLines.Contains(courseNum))
+                {
+
+                    if (splitLines[Array.IndexOf(splitLines, courseNum) + 1] == "F23")
+                    {
+                        listBox6.Items.Add(splitLines[0]);
+                    }
+                    else
+                    {
+                        string[] splitLines2 = line.Split(courseNum);
+                        if (splitLines2.Contains(courseNum))
+                        {
+
+                            if (splitLines[Array.IndexOf(splitLines2, courseNum) + 1] == "F23")
+                            { listBox6.Items.Add(splitLines[0]); }
+
+
+                        }
+                    }
+                }
+
+
+            }
+        }
+
+        private void listBox6_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+
+
+
+
+        }
+
+        private void listBox7_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            //Refresh Button that can be used after deleting a user
+        }
+
+        private void listBox5_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //Steal Advisee code from faculty menu
+
+
+        }
+
+        private void listBox3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Ask Naomi to do this bit
 
         }
     }
