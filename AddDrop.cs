@@ -15,6 +15,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Warning_Form;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.TaskbarClock;
 
 namespace Form
@@ -26,8 +27,8 @@ namespace Form
         List<String> currentSchedNames = new List<String>(); //this is a internal list of what classes the student is enrolled into
         List<String> currentSchedTimes = new List<String>(); // and the time those classes occur
         float creditTot = 0; // This allows us to know the credit total in this form.
-        
 
+        int line_to_edit;
 
 
         public AddDrop(string user)
@@ -87,8 +88,34 @@ namespace Form
 
         private void Drop_btn_Click(object sender, EventArgs e)
         {
-            
-            for (int i =dataGridView1.Rows.Count - 1; i >= 0; i--) //loops through our dataTable and finds any rows with a checked index, if the index is checked that whole row gets removed.
+            string[] lines3 = System.IO.File.ReadAllLines(@"C:\Users\turtl\Desktop\CourseHistoryDatabase.txt");
+            List<String> CourseHistory = new List<String>();
+            var Historylist = new Dictionary<int, dynamic>();
+            foreach (string line in lines3)
+            {
+                // Use a tab to indent each line of the file.
+                CourseHistory.Add(line);
+                Console.WriteLine("\n" + line);
+
+            }
+            for (int l = 0; l < CourseHistory.Capacity - 1; l++)
+            {
+                string[] Historystring = CourseHistory[l].Split(' '); //reading in the coursehistory
+                string username = Historystring[0];
+                string numCourses2 = Historystring[1];
+                dynamic d1 = new System.Dynamic.ExpandoObject();
+                Historylist[l] = d1;
+                Historylist[l].usrs = "User" + l;
+                Historylist[l].usrs = new { usrname = username, courseNum = numCourses2 };
+            }
+                for (int b = 0; b < Historylist.Count; b++)
+                {
+                    if (user == Historylist[b].usrs.usrname)
+                    {
+                        line_to_edit = b;
+                    }
+                }
+                    for (int i =dataGridView1.Rows.Count - 1; i >= 0; i--) //loops through our dataTable and finds any rows with a checked index, if the index is checked that whole row gets removed.
             {
                 DataGridViewRow dataGridViewRow = dataGridView1.Rows[i];
                 
@@ -102,14 +129,17 @@ namespace Form
                     replacementLine += (string)dataGridView1.Rows[i].Cells[3].Value;
                     replacementLine += " ";
                     replacementLine += "N";
-                    int line_to_edit = i;
 
-                    string[] lines5 = File.ReadAllLines(@"C:\Users\jdenright19\Desktop\CourseHistoryDatabase.txt");
+                    string[] lines5 = File.ReadAllLines(@"C:\Users\turtl\Desktop\CourseHistoryDatabase.txt");
                     
-                    string oldLine = lines5[i];
+                    string oldLine = lines5[line_to_edit];
                     string[] splitText = oldLine.Split(replacementLine);
                     string newText = splitText[0];
-                    newText += splitText[1];
+                    if (splitText.Count() >= 1)
+                    {
+                        newText += splitText[1];
+                    }
+
                     string[] newText2 = newText.Split(" ");
                     int numClasses = int.Parse(newText2[1]);
                     numClasses -= 1;
@@ -123,8 +153,10 @@ namespace Form
                         newText3 += " ";
                     }
                     string lineToWrite = newText3;
+
+                    
                     // Write the new file over the old file.
-                    using (StreamWriter writer = new StreamWriter(@"C:\Users\jdenright19\Desktop\CourseHistoryDatabase.txt"))
+                    using (StreamWriter writer = new StreamWriter(@"C:\Users\turtl\Desktop\CourseHistoryDatabase.txt"))
                     {
                         for (int currentLine = 0; currentLine <= lines5.Length - 1; ++currentLine) //finds the line in the text file to edit and overwrites it.
                         {
@@ -177,7 +209,7 @@ namespace Form
 
 
 
-            for (int i = 0; i < courses.Capacity - 3; i++) // we are now going to look through the course list
+            for (int i = 0; i < courses.Count - 3; i++) // we are now going to look through the course list
 
             {
                 //Splitting everything up in the course descriptions
@@ -198,7 +230,7 @@ namespace Form
                     historyData.Add(line);
                     //Debug.WriteLine("\n" + line);
                 }
-                for (int k = 0; k < historyData.Capacity - 1; k++)
+                for (int k = 0; k < historyData.Count - 1; k++)
                 {
                     dynamic[] classInfo = historyData[k].Split(' ');
                     string username = classInfo[0];
@@ -357,25 +389,26 @@ namespace Form
                     string[] Grade = new string[10];
                     
                     int lineIncriment;
-                    for (int l = 0; l <CourseHistory.Capacity - 1; l++)
+                    for (int l = 0; l <CourseHistory.Count - 1; l++)
                     {
                         string[] Historystring = CourseHistory[l].Split(' '); //reading in the coursehistory
                         string username = Historystring[0];
                         string numCourses2 = Historystring[1];
                         int increment = 2;
-                        
-                        for (int o = 0; o < int.Parse(numCourses2); o++)//checks num of classes and adds different course vals based upon num of courses
+                        if (user == username)
                         {
-                            className[o] = Historystring[increment];
-                            increment++;
-                            semester[o] = Historystring[increment];
-                            increment++;
-                            creditNum[o] = Historystring[increment];
-                            increment++;
-                            Grade[o] = Historystring[increment];
-                            increment++;
+                            for (int o = 0; o < int.Parse(numCourses2); o++)//checks num of classes and adds different course vals based upon num of courses
+                            {
+                                className[o] = Historystring[increment];
+                                increment++;
+                                semester[o] = Historystring[increment];
+                                increment++;
+                                creditNum[o] = Historystring[increment];
+                                increment++;
+                                Grade[o] = Historystring[increment];
+                                increment++;
+                            }
                         }
-                        
                         dynamic d1 = new System.Dynamic.ExpandoObject();
                         Historylist[l] = d1;
                         Historylist[l].usrs = "User" + l;
@@ -390,6 +423,7 @@ namespace Form
                     {
                         if (user == Historylist[b].usrs.usrname)
                         {
+                            int line_to_edit = b;
                             int increment2 = 0;
                             
                             string tempNum = Historylist[b].usrs.courseNum; //gets old values that were already in the text file and adds those entries into the string.
@@ -418,7 +452,7 @@ namespace Form
                             newString += credit;
                             newString += " ";
                             newString += "N";
-                            int line_to_edit = b;
+                           
                             string[] lines5 = File.ReadAllLines(@"C:\Users\turtl\Desktop\CourseHistoryDatabase.txt");
                             string lineToWrite = newString;
                             // Write the new file over the old file.

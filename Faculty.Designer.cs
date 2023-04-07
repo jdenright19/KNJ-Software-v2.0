@@ -44,9 +44,21 @@
             this.adviseeList = new System.Windows.Forms.ListBox();
             this.label4 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.CourseNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CourseName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Instructor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Credit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NumSeats = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numTimeBlocks = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Days = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.timeStart = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TimeEnd = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Select = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // listBox1
@@ -139,6 +151,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.dataGridView1);
             this.tabPage1.Controls.Add(this.button2);
             this.tabPage1.Controls.Add(this.button1);
             this.tabPage1.Controls.Add(this.advSched);
@@ -157,7 +170,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(889, 550);
+            this.button2.Location = new System.Drawing.Point(889, 265);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 5;
@@ -167,7 +180,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(576, 550);
+            this.button1.Location = new System.Drawing.Point(560, 265);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 4;
@@ -182,7 +195,7 @@
             this.advSched.Location = new System.Drawing.Point(560, 31);
             this.advSched.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.advSched.Name = "advSched";
-            this.advSched.Size = new System.Drawing.Size(415, 514);
+            this.advSched.Size = new System.Drawing.Size(415, 229);
             this.advSched.TabIndex = 3;
             this.advSched.SelectedIndexChanged += new System.EventHandler(this.advSched_SelectedIndexChanged);
             // 
@@ -203,7 +216,7 @@
             this.adviseeList.Location = new System.Drawing.Point(6, 31);
             this.adviseeList.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.adviseeList.Name = "adviseeList";
-            this.adviseeList.Size = new System.Drawing.Size(462, 499);
+            this.adviseeList.Size = new System.Drawing.Size(462, 229);
             this.adviseeList.TabIndex = 1;
             this.adviseeList.SelectedIndexChanged += new System.EventHandler(this.adviseeList_SelectedIndexChanged);
             // 
@@ -222,10 +235,101 @@
             this.tabPage2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage2.Size = new System.Drawing.Size(612, 278);
+            this.tabPage2.Size = new System.Drawing.Size(1023, 627);
             this.tabPage2.TabIndex = 3;
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.CourseNum,
+            this.CourseName,
+            this.Instructor,
+            this.Credit,
+            this.NumSeats,
+            this.numTimeBlocks,
+            this.Days,
+            this.timeStart,
+            this.TimeEnd,
+            this.Select});
+            this.dataGridView1.Location = new System.Drawing.Point(18, 310);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.Size = new System.Drawing.Size(970, 300);
+            this.dataGridView1.TabIndex = 15;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // CourseNum
+            // 
+            this.CourseNum.HeaderText = "Course Number";
+            this.CourseNum.MinimumWidth = 6;
+            this.CourseNum.Name = "CourseNum";
+            this.CourseNum.Width = 125;
+            // 
+            // CourseName
+            // 
+            this.CourseName.HeaderText = "Course Name";
+            this.CourseName.MinimumWidth = 6;
+            this.CourseName.Name = "CourseName";
+            this.CourseName.Width = 125;
+            // 
+            // Instructor
+            // 
+            this.Instructor.HeaderText = "Instructor";
+            this.Instructor.MinimumWidth = 6;
+            this.Instructor.Name = "Instructor";
+            this.Instructor.Width = 125;
+            // 
+            // Credit
+            // 
+            this.Credit.HeaderText = "Credit";
+            this.Credit.MinimumWidth = 6;
+            this.Credit.Name = "Credit";
+            this.Credit.Width = 125;
+            // 
+            // NumSeats
+            // 
+            this.NumSeats.HeaderText = "Number of Seats";
+            this.NumSeats.MinimumWidth = 6;
+            this.NumSeats.Name = "NumSeats";
+            this.NumSeats.Width = 125;
+            // 
+            // numTimeBlocks
+            // 
+            this.numTimeBlocks.HeaderText = "Number of Time Blocks";
+            this.numTimeBlocks.MinimumWidth = 6;
+            this.numTimeBlocks.Name = "numTimeBlocks";
+            this.numTimeBlocks.Width = 125;
+            // 
+            // Days
+            // 
+            this.Days.HeaderText = "Days";
+            this.Days.MinimumWidth = 6;
+            this.Days.Name = "Days";
+            this.Days.Width = 125;
+            // 
+            // timeStart
+            // 
+            this.timeStart.HeaderText = "Time Start";
+            this.timeStart.MinimumWidth = 6;
+            this.timeStart.Name = "timeStart";
+            this.timeStart.Width = 125;
+            // 
+            // TimeEnd
+            // 
+            this.TimeEnd.HeaderText = "Time End";
+            this.TimeEnd.MinimumWidth = 6;
+            this.TimeEnd.Name = "TimeEnd";
+            this.TimeEnd.Width = 125;
+            // 
+            // Select
+            // 
+            this.Select.HeaderText = "Select";
+            this.Select.MinimumWidth = 6;
+            this.Select.Name = "Select";
+            this.Select.Width = 125;
             // 
             // Faculty
             // 
@@ -240,6 +344,7 @@
             this.tabPage3.PerformLayout();
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -262,5 +367,16 @@
         private ListBox advSched;
         private Button button2;
         private Button button1;
+        private DataGridView dataGridView1;
+        private DataGridViewTextBoxColumn CourseNum;
+        private DataGridViewTextBoxColumn CourseName;
+        private DataGridViewTextBoxColumn Instructor;
+        private DataGridViewTextBoxColumn Credit;
+        private DataGridViewTextBoxColumn NumSeats;
+        private DataGridViewTextBoxColumn numTimeBlocks;
+        private DataGridViewTextBoxColumn Days;
+        private DataGridViewTextBoxColumn timeStart;
+        private DataGridViewTextBoxColumn TimeEnd;
+        private DataGridViewCheckBoxColumn Select;
     }
 }
