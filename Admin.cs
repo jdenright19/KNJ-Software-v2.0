@@ -166,7 +166,31 @@ namespace Login_Window
 
         private void listBox3_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // Ask Naomi to do this bit
+            string[] lines = System.IO.File.ReadAllLines(@"C:\SE Repos\UserDatabase.txt");
+            List<String> Userdatabase = new List<String>();
+
+            foreach (string line in lines)
+            {
+                // Use a tab to indent each line of the file.
+                Userdatabase.Add(line);
+                Console.WriteLine("\n" + line);
+
+            }
+
+            listBox5.Items.Clear();
+            string fn = listBox3.SelectedItem.ToString();
+            string[] FacultyName = fn.Split(' ');
+            for (int i = 0; i < Userdatabase.Count; i++)
+            {
+                string[] Userstring = Userdatabase[i].Split(" ");
+                string advisor = Userstring[5];
+                if (FacultyName[0] == advisor)
+                {
+                    string advisee = Userstring[2] + " " + Userstring[3] + " " + Userstring[4];
+                    listBox5.Items.Add(advisee);
+                }
+            }
+
 
         }
     }
