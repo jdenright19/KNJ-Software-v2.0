@@ -139,5 +139,10 @@ namespace Login_Window
         {
 
         }
+
+        private void cbx_showPassword_CheckedChanged_1(object sender, EventArgs e)
+        {
+            txb_passWord_TextChanged.useSystemPassChar = false;
+        }
     }
 }

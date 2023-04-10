@@ -57,6 +57,7 @@
             this.okB.TabIndex = 1;
             this.okB.Text = "OK";
             this.okB.UseVisualStyleBackColor = true;
+            this.okB.Click += new System.EventHandler(this.okB_Click);
             // 
             // fPassword
             // 

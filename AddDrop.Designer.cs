@@ -40,7 +40,6 @@
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.button1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.CourseNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,16 +52,19 @@
             this.timeStart = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TimeEnd = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Select = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // checkedListBox1
             // 
+            this.checkedListBox1.BackColor = System.Drawing.Color.PapayaWhip;
             this.checkedListBox1.CheckOnClick = true;
             this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Location = new System.Drawing.Point(48, 64);
+            this.checkedListBox1.Location = new System.Drawing.Point(24, 64);
             this.checkedListBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.checkedListBox1.Name = "checkedListBox1";
             this.checkedListBox1.Size = new System.Drawing.Size(570, 444);
@@ -72,7 +74,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(46, 41);
+            this.label1.Location = new System.Drawing.Point(22, 41);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(126, 20);
             this.label1.TabIndex = 1;
@@ -81,7 +83,7 @@
             // 
             // Drop_btn
             // 
-            this.Drop_btn.Location = new System.Drawing.Point(354, 581);
+            this.Drop_btn.Location = new System.Drawing.Point(388, 513);
             this.Drop_btn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Drop_btn.Name = "Drop_btn";
             this.Drop_btn.Size = new System.Drawing.Size(86, 31);
@@ -92,7 +94,7 @@
             // 
             // Back_Btn
             // 
-            this.Back_Btn.Location = new System.Drawing.Point(74, 576);
+            this.Back_Btn.Location = new System.Drawing.Point(24, 563);
             this.Back_Btn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Back_Btn.Name = "Back_Btn";
             this.Back_Btn.Size = new System.Drawing.Size(86, 31);
@@ -102,7 +104,7 @@
             // 
             // lbl_submit
             // 
-            this.lbl_submit.Location = new System.Drawing.Point(446, 583);
+            this.lbl_submit.Location = new System.Drawing.Point(480, 515);
             this.lbl_submit.Name = "lbl_submit";
             this.lbl_submit.Size = new System.Drawing.Size(114, 27);
             this.lbl_submit.TabIndex = 11;
@@ -113,7 +115,7 @@
             // lbl_currentSchedule
             // 
             this.lbl_currentSchedule.AutoSize = true;
-            this.lbl_currentSchedule.Location = new System.Drawing.Point(649, 41);
+            this.lbl_currentSchedule.Location = new System.Drawing.Point(624, 40);
             this.lbl_currentSchedule.Name = "lbl_currentSchedule";
             this.lbl_currentSchedule.Size = new System.Drawing.Size(121, 20);
             this.lbl_currentSchedule.TabIndex = 10;
@@ -197,28 +199,20 @@
             this.label9.TabIndex = 1;
             this.label9.Text = "Course Name";
             // 
-            // menuStrip1
-            // 
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(7, 3, 0, 3);
-            this.menuStrip1.Size = new System.Drawing.Size(1906, 24);
-            this.menuStrip1.TabIndex = 12;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(609, 583);
+            this.button1.Location = new System.Drawing.Point(24, 513);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(94, 29);
+            this.button1.Size = new System.Drawing.Size(175, 29);
             this.button1.TabIndex = 13;
-            this.button1.Text = "Course History";
+            this.button1.Text = "View Course History";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // dataGridView1
             // 
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.Sienna;
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.CourseNum,
@@ -231,11 +225,11 @@
             this.timeStart,
             this.TimeEnd,
             this.Select});
-            this.dataGridView1.Location = new System.Drawing.Point(665, 65);
+            this.dataGridView1.Location = new System.Drawing.Point(624, 64);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(1191, 460);
+            this.dataGridView1.Size = new System.Drawing.Size(1272, 460);
             this.dataGridView1.TabIndex = 14;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -309,11 +303,22 @@
             this.Select.Name = "Select";
             this.Select.Width = 125;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Login_Window.Properties.Resources.unnamed;
+            this.pictureBox1.Location = new System.Drawing.Point(1763, 537);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(133, 82);
+            this.pictureBox1.TabIndex = 15;
+            this.pictureBox1.TabStop = false;
+            // 
             // AddDrop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1906, 1055);
+            this.BackColor = System.Drawing.SystemColors.Info;
+            this.ClientSize = new System.Drawing.Size(1906, 631);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.lbl_submit);
@@ -322,8 +327,6 @@
             this.Controls.Add(this.Drop_btn);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.checkedListBox1);
-            this.Controls.Add(this.menuStrip1);
-            this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "AddDrop";
             this.Text = "AddDrop";
@@ -333,6 +336,7 @@
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -353,7 +357,6 @@
         private TableLayoutPanel tableLayoutPanel2;
         private Label label8;
         private Label label9;
-        private MenuStrip menuStrip1;
         private EventHandler label10_Click;
         private Button button1;
         private DataGridView dataGridView1;
@@ -367,5 +370,6 @@
         private DataGridViewTextBoxColumn timeStart;
         private DataGridViewTextBoxColumn TimeEnd;
         private DataGridViewCheckBoxColumn Select;
+        private PictureBox pictureBox1;
     }
 }
