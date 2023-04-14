@@ -64,7 +64,7 @@ namespace Login_Window
                 Console.WriteLine("\n" + line);
 
             }
-            for (int i = 0; i < Userdatabase.Count; i++)
+            for (int i = 0; i < Userdatabase.Count - 1; i++)
             {
                 string[] Userstring = Userdatabase[i].Split(' ');
                 string username = Userstring[0];
