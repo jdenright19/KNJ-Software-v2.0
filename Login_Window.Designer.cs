@@ -96,6 +96,7 @@
             resources.ApplyResources(this.cbx_showPassword, "cbx_showPassword");
             this.cbx_showPassword.Name = "cbx_showPassword";
             this.cbx_showPassword.UseVisualStyleBackColor = true;
+            this.cbx_showPassword.CheckedChanged += new System.EventHandler(this.cbx_showPassword_CheckedChanged_1);
             // 
             // pictureBox1
             // 

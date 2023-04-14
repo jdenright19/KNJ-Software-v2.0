@@ -1,3 +1,5 @@
+using System.Diagnostics;
+
 namespace Login_GUI
 {
     public partial class formWin : System.Windows.Forms.Form
@@ -19,6 +21,9 @@ namespace Login_GUI
 
         }
 
-        
+        private void okB_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
