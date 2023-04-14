@@ -59,53 +59,86 @@
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="btn_login.Location" type="System.Drawing.Point, System.Drawing">
-    <value>117, 176</value>
+    <value>102, 132</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="btn_login.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
   </data>
   <data name="btn_login.Size" type="System.Drawing.Size, System.Drawing">
-    <value>97, 29</value>
+    <value>85, 22</value>
   </data>
   <data name="lbl_userName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>29, 96</value>
+    <value>25, 72</value>
+  </data>
+  <data name="lbl_userName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>65, 15</value>
   </data>
   <data name="lbl_password.Location" type="System.Drawing.Point, System.Drawing">
-    <value>29, 148</value>
+    <value>25, 111</value>
+  </data>
+  <data name="lbl_password.Size" type="System.Drawing.Size, System.Drawing">
+    <value>57, 15</value>
   </data>
   <data name="txb_userName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>117, 93</value>
+    <value>102, 70</value>
+  </data>
+  <data name="txb_userName.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
+  </data>
+  <data name="txb_userName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>295, 23</value>
   </data>
   <data name="txb_passWord.Location" type="System.Drawing.Point, System.Drawing">
-    <value>119, 143</value>
+    <value>104, 107</value>
+  </data>
+  <data name="txb_passWord.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
+  </data>
+  <data name="txb_passWord.Size" type="System.Drawing.Size, System.Drawing">
+    <value>294, 23</value>
   </data>
   <data name="cbx_remeberMe.Location" type="System.Drawing.Point, System.Drawing">
-    <value>117, 212</value>
+    <value>102, 159</value>
+  </data>
+  <data name="cbx_remeberMe.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
+  </data>
+  <data name="cbx_remeberMe.Size" type="System.Drawing.Size, System.Drawing">
+    <value>93, 19</value>
   </data>
   <data name="lnk_forgotPassword.Location" type="System.Drawing.Point, System.Drawing">
-    <value>336, 176</value>
+    <value>294, 132</value>
+  </data>
+  <data name="lnk_forgotPassword.Size" type="System.Drawing.Size, System.Drawing">
+    <value>95, 15</value>
   </data>
   <data name="lbl_softwareName.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Rockwell, 18pt, style=Bold</value>
+    <value>Microsoft Sans Serif, 18pt, style=Bold</value>
   </data>
   <data name="lbl_softwareName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>29, 16</value>
+    <value>25, 12</value>
   </data>
   <data name="lbl_softwareName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>385, 38</value>
+    <value>306, 29</value>
   </data>
   <data name="lbl_softwareName.Text" xml:space="preserve">
     <value>KJN Scholar Registration</value>
   </data>
   <data name="cbx_showPassword.Location" type="System.Drawing.Point, System.Drawing">
-    <value>474, 149</value>
+    <value>415, 112</value>
+  </data>
+  <data name="cbx_showPassword.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
+  </data>
+  <data name="cbx_showPassword.Size" type="System.Drawing.Size, System.Drawing">
+    <value>108, 19</value>
   </data>
   <data name="pictureBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>474, 16</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="pictureBox1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 4, 3, 4</value>
+    <value>415, 12</value>
   </data>
   <data name="pictureBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>149, 117</value>
+    <value>130, 88</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="pictureBox1.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
@@ -115,8 +148,11 @@
   <data name="pictureBox1.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
   </data>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>7, 15</value>
+  </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>646, 259</value>
+    <value>570, 191</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>"Software Name" Login</value>

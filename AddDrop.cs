@@ -389,7 +389,7 @@ namespace Form
                     string[] Grade = new string[10];
                     
                     int lineIncriment;
-                    for (int l = 0; l <CourseHistory.Count - 1; l++)
+                    for (int l = 0; l <CourseHistory.Count; l++)
                     {
                         string[] Historystring = CourseHistory[l].Split(' '); //reading in the coursehistory
                         string username = Historystring[0];

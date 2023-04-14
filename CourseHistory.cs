@@ -17,10 +17,10 @@ namespace Login_Window
             InitializeComponent();
             string numClasses;
             string user1 = user;
-            string[] className = new string[10];
-            string[] semester = new string[10];
-            string[] creditNum = new string[10];
-            string[] Grade = new string[10];
+            string[] className = new string[100];
+            string[] semester = new string[100];
+            string[] creditNum = new string[100];
+            string[] Grade = new string[100];
             List<String> historyData = new List<String>();
             var history = new Dictionary<String, List<String>>();
             string[] lines = System.IO.File.ReadAllLines(@"C:\Users\turtl\Desktop\CourseHistoryDatabase.txt");
@@ -30,9 +30,9 @@ namespace Login_Window
                 historyData.Add(line);
                 //Debug.WriteLine("\n" + line);
             }
-            for (int k = 0; k < historyData.Capacity - 1; k++)
+            for (int k = 0; k < historyData.Count; k++)
             {
-                dynamic[] classInfo = historyData[k].Split(' ');
+                string[] classInfo = historyData[k].Split(' ');
                 string username = classInfo[0];
                 numClasses = classInfo[1];
                 history.Add(username, new List<String>());
