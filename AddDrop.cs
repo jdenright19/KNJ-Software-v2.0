@@ -98,7 +98,7 @@ namespace Form
                 Console.WriteLine("\n" + line);
 
             }
-            for (int l = 0; l < CourseHistory.Capacity - 1; l++)
+            for (int l = 0; l < CourseHistory.Count; l++)
             {
                 string[] Historystring = CourseHistory[l].Split(' '); //reading in the coursehistory
                 string username = Historystring[0];
@@ -209,7 +209,7 @@ namespace Form
 
 
 
-            for (int i = 0; i < courses.Count - 3; i++) // we are now going to look through the course list
+            for (int i = 0; i < courses.Count; i++) // we are now going to look through the course list
 
             {
                 //Splitting everything up in the course descriptions
@@ -230,7 +230,7 @@ namespace Form
                     historyData.Add(line);
                     //Debug.WriteLine("\n" + line);
                 }
-                for (int k = 0; k < historyData.Count - 1; k++)
+                for (int k = 0; k < historyData.Count; k++)
                 {
                     dynamic[] classInfo = historyData[k].Split(' ');
                     string username = classInfo[0];

@@ -64,29 +64,27 @@
             this.checkedListBox1.BackColor = System.Drawing.Color.PapayaWhip;
             this.checkedListBox1.CheckOnClick = true;
             this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Location = new System.Drawing.Point(24, 64);
-            this.checkedListBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.checkedListBox1.Location = new System.Drawing.Point(21, 48);
             this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(570, 444);
+            this.checkedListBox1.Size = new System.Drawing.Size(499, 328);
             this.checkedListBox1.TabIndex = 0;
             this.checkedListBox1.SelectedIndexChanged += new System.EventHandler(this.checkedListBox1_SelectedIndexChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(22, 41);
+            this.label1.Location = new System.Drawing.Point(19, 31);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(126, 20);
+            this.label1.Size = new System.Drawing.Size(100, 15);
             this.label1.TabIndex = 1;
             this.label1.Text = "Available Courses";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // Drop_btn
             // 
-            this.Drop_btn.Location = new System.Drawing.Point(388, 513);
-            this.Drop_btn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Drop_btn.Location = new System.Drawing.Point(340, 385);
             this.Drop_btn.Name = "Drop_btn";
-            this.Drop_btn.Size = new System.Drawing.Size(86, 31);
+            this.Drop_btn.Size = new System.Drawing.Size(75, 23);
             this.Drop_btn.TabIndex = 5;
             this.Drop_btn.Text = "Drop";
             this.Drop_btn.UseVisualStyleBackColor = true;
@@ -94,19 +92,19 @@
             // 
             // Back_Btn
             // 
-            this.Back_Btn.Location = new System.Drawing.Point(24, 563);
-            this.Back_Btn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Back_Btn.Location = new System.Drawing.Point(21, 422);
             this.Back_Btn.Name = "Back_Btn";
-            this.Back_Btn.Size = new System.Drawing.Size(86, 31);
+            this.Back_Btn.Size = new System.Drawing.Size(75, 23);
             this.Back_Btn.TabIndex = 6;
             this.Back_Btn.Text = "Back";
             this.Back_Btn.UseVisualStyleBackColor = true;
             // 
             // lbl_submit
             // 
-            this.lbl_submit.Location = new System.Drawing.Point(480, 515);
+            this.lbl_submit.Location = new System.Drawing.Point(420, 386);
+            this.lbl_submit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lbl_submit.Name = "lbl_submit";
-            this.lbl_submit.Size = new System.Drawing.Size(114, 27);
+            this.lbl_submit.Size = new System.Drawing.Size(100, 20);
             this.lbl_submit.TabIndex = 11;
             this.lbl_submit.Text = "Submit";
             this.lbl_submit.UseVisualStyleBackColor = true;
@@ -115,9 +113,9 @@
             // lbl_currentSchedule
             // 
             this.lbl_currentSchedule.AutoSize = true;
-            this.lbl_currentSchedule.Location = new System.Drawing.Point(624, 40);
+            this.lbl_currentSchedule.Location = new System.Drawing.Point(546, 30);
             this.lbl_currentSchedule.Name = "lbl_currentSchedule";
-            this.lbl_currentSchedule.Size = new System.Drawing.Size(121, 20);
+            this.lbl_currentSchedule.Size = new System.Drawing.Size(98, 15);
             this.lbl_currentSchedule.TabIndex = 10;
             this.lbl_currentSchedule.Text = "Current Schedule";
             this.lbl_currentSchedule.Click += new System.EventHandler(this.lbl_currentSchedule_Click);
@@ -148,7 +146,7 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(3, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(1, 20);
+            this.label6.Size = new System.Drawing.Size(1, 15);
             this.label6.TabIndex = 0;
             this.label6.Text = "Course Number";
             // 
@@ -186,7 +184,7 @@
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(3, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(1, 20);
+            this.label8.Size = new System.Drawing.Size(1, 15);
             this.label8.TabIndex = 0;
             this.label8.Text = "Course Number";
             // 
@@ -201,9 +199,10 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(24, 513);
+            this.button1.Location = new System.Drawing.Point(21, 385);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(175, 29);
+            this.button1.Size = new System.Drawing.Size(153, 22);
             this.button1.TabIndex = 13;
             this.button1.Text = "View Course History";
             this.button1.UseVisualStyleBackColor = true;
@@ -225,11 +224,10 @@
             this.timeStart,
             this.TimeEnd,
             this.Select});
-            this.dataGridView1.Location = new System.Drawing.Point(624, 64);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dataGridView1.Location = new System.Drawing.Point(546, 53);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(1272, 460);
+            this.dataGridView1.Size = new System.Drawing.Size(1113, 345);
             this.dataGridView1.TabIndex = 14;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -306,18 +304,19 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Login_Window.Properties.Resources.unnamed;
-            this.pictureBox1.Location = new System.Drawing.Point(1763, 537);
+            this.pictureBox1.Location = new System.Drawing.Point(1543, 403);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(133, 82);
+            this.pictureBox1.Size = new System.Drawing.Size(116, 62);
             this.pictureBox1.TabIndex = 15;
             this.pictureBox1.TabStop = false;
             // 
             // AddDrop
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Info;
-            this.ClientSize = new System.Drawing.Size(1906, 631);
+            this.ClientSize = new System.Drawing.Size(1668, 473);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button1);
@@ -327,7 +326,6 @@
             this.Controls.Add(this.Drop_btn);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.checkedListBox1);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "AddDrop";
             this.Text = "AddDrop";
             this.Load += new System.EventHandler(this.Form1_Load);
