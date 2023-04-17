@@ -111,6 +111,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.BackColor = System.Drawing.Color.BurlyWood;
             this.tabPage1.Controls.Add(this.button6);
             this.tabPage1.Controls.Add(this.label5);
             this.tabPage1.Controls.Add(this.listBox5);
@@ -124,11 +125,10 @@
             this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Location = new System.Drawing.Point(4, 29);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(1128, 863);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "User Overview";
-            this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // button6
             // 
@@ -219,6 +219,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.BackColor = System.Drawing.Color.BurlyWood;
             this.tabPage2.Controls.Add(this.button3);
             this.tabPage2.Controls.Add(this.listBox6);
             this.tabPage2.Controls.Add(this.label6);
@@ -226,11 +227,10 @@
             this.tabPage2.Controls.Add(this.listBox2);
             this.tabPage2.Location = new System.Drawing.Point(4, 29);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(1128, 863);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Course Overview";
-            this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // button3
             // 
@@ -262,25 +262,25 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.BackColor = System.Drawing.Color.BurlyWood;
             this.tabPage3.Location = new System.Drawing.Point(4, 29);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage3.Size = new System.Drawing.Size(1128, 863);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Schedule Confirmations";
-            this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // tabPage4
             // 
+            this.tabPage4.BackColor = System.Drawing.Color.BurlyWood;
             this.tabPage4.Controls.Add(this.button5);
             this.tabPage4.Controls.Add(this.button4);
             this.tabPage4.Location = new System.Drawing.Point(4, 29);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage4.Size = new System.Drawing.Size(1128, 863);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Adminstrative";
-            this.tabPage4.UseVisualStyleBackColor = true;
             // 
             // button5
             // 
@@ -306,6 +306,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Info;
             this.ClientSize = new System.Drawing.Size(1163, 936);
             this.Controls.Add(this.tabControl1);
             this.Name = "Admin";
