@@ -34,11 +34,11 @@ namespace Login_Window
             FacultyName = user;
             List<String> Coursedatabase = new List<String>();
             var Courselist = new Dictionary<int, dynamic>();
-            string[] lines2 = System.IO.File.ReadAllLines(@"C:\Users\turtl\Desktop\CourseDatabase.txt");
+            string[] lines2 = System.IO.File.ReadAllLines(@"C:\SE Repos\CourseDatabase.txt");
             System.Console.WriteLine("Contents of Course database");
 
             List<String> Userdatabase = new List<String>();
-            string[] users = System.IO.File.ReadAllLines(@"C:\Users\turtl\Desktop\UserDatabase.txt");
+            string[] users = System.IO.File.ReadAllLines(@"C:\SE Repos\UserDatabase.txt");
 
             foreach (string line in lines2)
             {

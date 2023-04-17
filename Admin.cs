@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualBasic.ApplicationServices;
+﻿using Form;
+using Microsoft.VisualBasic.ApplicationServices;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,7 +22,7 @@ namespace Login_Window
             InitializeComponent();
             List<String> Coursedatabase = new List<String>();
             var Courselist = new Dictionary<int, dynamic>();
-            string[] lines2 = System.IO.File.ReadAllLines(@"C:\Users\turtl\Desktop\CourseDatabase.txt");
+            string[] lines2 = System.IO.File.ReadAllLines(@"C:\SE Repos\CourseDatabase.txt");
             System.Console.WriteLine("Contents of Course database");
 
             foreach (string line in lines2)
@@ -37,7 +38,7 @@ namespace Login_Window
             }
 
 
-            string[] lines = System.IO.File.ReadAllLines(@"C:\Users\turtl\Desktop\UserDatabase.txt");
+            string[] lines = System.IO.File.ReadAllLines(@"C:\SE Repos\UserDatabase.txt");
             List<String> Userdatabase = new List<String>();
             var Userlist = new Dictionary<int, dynamic>();
 
@@ -296,6 +297,18 @@ namespace Login_Window
         {
             AddUserForm newUserForm = new AddUserForm();
             newUserForm.Show();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Faculty facultyForm = new Faculty("dumFac");
+            facultyForm.Show();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            AddDrop addForm = new AddDrop("dumStu");
+            addForm.Show();
         }
     }
 }
