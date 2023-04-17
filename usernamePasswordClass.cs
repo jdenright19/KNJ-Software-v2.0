@@ -11,7 +11,7 @@ namespace Login_Window
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new Login_Window());
+            Application.Run(new New_Login_Window());
         }
     }
 }

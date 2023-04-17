@@ -36,6 +36,7 @@ namespace Form
             InitializeComponent();
             List<String> Coursedatabase = new List<String>();
             string[] lines2 = System.IO.File.ReadAllLines(@"C:\SE Repos\CourseDatabase.txt");
+            string[] lines2 = System.IO.File.ReadAllLines(@"C:\Users\katie\OneDrive\Desktop\Databases SE\CourseDatabase.txt");
             this.user = user;
 
             //Katie's Pathway : C:\Users\katie\Downloads\main-master\main-master\CourseDatabase.txt
@@ -223,7 +224,7 @@ namespace Form
                 //course history check
                 List<String> historyData = new List<String>();
                 var history = new Dictionary<String, List<String>>();
-                string[] lines = System.IO.File.ReadAllLines(@"C:\Users\turtl\Desktop\CourseHistoryDatabase.txt");
+                string[] lines = System.IO.File.ReadAllLines(@"C:\Users\katie\OneDrive\Desktop\Databases SE\CourseHistoryDatabase.txt");
                 System.Console.WriteLine("Contents of Course History:");
                 foreach (string line in lines)
                 {
@@ -372,7 +373,7 @@ namespace Form
                         string extraTimeBlock = courseInfo[7];
                         
                     }
-                    string[] lines3 = System.IO.File.ReadAllLines(@"C:\Users\turtl\Desktop\CourseHistoryDatabase.txt");
+                    string[] lines3 = System.IO.File.ReadAllLines(@"C:\Users\katie\OneDrive\Desktop\Databases SE\CourseHistoryDatabase.txt");
                     List<String> CourseHistory = new List<String>();
                     var Historylist = new Dictionary<int, dynamic>();
                     foreach (string line in lines3)
