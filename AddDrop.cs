@@ -454,10 +454,10 @@ namespace Form
                             newString += " ";
                             newString += "N";
                            
-                            string[] lines5 = File.ReadAllLines(@"C:\Users\turtl\Desktop\CourseHistoryDatabase.txt");
+                            string[] lines5 = File.ReadAllLines(@"C:\Users\katie\OneDrive\Desktop\Databases SE\CourseHistoryDatabase.txt");
                             string lineToWrite = newString;
                             // Write the new file over the old file.
-                            using (StreamWriter writer = new StreamWriter(@"C:\Users\turtl\Desktop\CourseHistoryDatabase.txt"))
+                            using (StreamWriter writer = new StreamWriter(@"C:\Users\katie\OneDrive\Desktop\Databases SE\CourseHistoryDatabase.txt"))
                             {
                                 for (int currentLine = 0; currentLine <= lines5.Length -1; ++currentLine) //finds the line in the text file to edit and overwrites it.
                                 {
