@@ -59,6 +59,7 @@
             // 
             resources.ApplyResources(this.lbl_password, "lbl_password");
             this.lbl_password.Name = "lbl_password";
+            this.lbl_password.Click += new System.EventHandler(this.lbl_password_Click);
             // 
             // txb_userName
             // 
@@ -85,11 +86,13 @@
             resources.ApplyResources(this.lnk_forgotPassword, "lnk_forgotPassword");
             this.lnk_forgotPassword.Name = "lnk_forgotPassword";
             this.lnk_forgotPassword.TabStop = true;
+            this.lnk_forgotPassword.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnk_forgotPassword_LinkClicked);
             // 
             // lbl_softwareName
             // 
             resources.ApplyResources(this.lbl_softwareName, "lbl_softwareName");
             this.lbl_softwareName.Name = "lbl_softwareName";
+            this.lbl_softwareName.Click += new System.EventHandler(this.lbl_softwareName_Click);
             // 
             // cbx_showPassword
             // 
@@ -104,6 +107,7 @@
             this.pictureBox1.Image = global::Login_Window.Properties.Resources.unnamed;
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click_1);
             // 
             // Login_Window
             // 

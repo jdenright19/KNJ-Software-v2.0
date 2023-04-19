@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualBasic.ApplicationServices;
+﻿using Form;
+using Microsoft.VisualBasic.ApplicationServices;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,7 +22,7 @@ namespace Login_Window
             InitializeComponent();
             List<String> Coursedatabase = new List<String>();
             var Courselist = new Dictionary<int, dynamic>();
-            string[] lines2 = System.IO.File.ReadAllLines(@"C:\Users\turtl\Desktop\CourseDatabase.txt");
+            string[] lines2 = System.IO.File.ReadAllLines(@"C:\Users\katie\OneDrive\Desktop\Databases SE\CourseDatabase.txt");
             System.Console.WriteLine("Contents of Course database");
 
             foreach (string line in lines2)
@@ -37,7 +38,7 @@ namespace Login_Window
             }
 
 
-            string[] lines = System.IO.File.ReadAllLines(@"C:\Users\turtl\Desktop\UserDatabase.txt");
+            string[] lines = System.IO.File.ReadAllLines(@"C:\Users\katie\Downloads\UserDatabase.txt");
             List<String> Userdatabase = new List<String>();
             var Userlist = new Dictionary<int, dynamic>();
 
@@ -175,7 +176,7 @@ namespace Login_Window
             tempUser = listBox3.SelectedItem.ToString();
             listBox5.Items.Clear();
             List<String> Userdatabase = new List<String>();
-            string[] users = System.IO.File.ReadAllLines(@"C:\Users\turtl\Desktop\UserDatabase.txt");
+            string[] users = System.IO.File.ReadAllLines(@"C:\Users\katie\Downloads\UserDatabase.txt");
 
             foreach (string line in users)
             {
@@ -205,7 +206,7 @@ namespace Login_Window
 
         private void button1_Click(object sender, EventArgs e)
         {
-             string[] lines = System.IO.File.ReadAllLines(@"C:\Users\turtl\Desktop\UserDatabase.txt");
+             string[] lines = System.IO.File.ReadAllLines(@"C:\Users\katie\Downloads\UserDatabase.txt");
             List<String> Userdatabase = new List<String>();
             string[] lines3 = System.IO.File.ReadAllLines(@"C:\Users\turtl\Desktop\CourseHistoryDatabase.txt");
             List<String> CourseHistoryDatabase = new List<String>();
@@ -248,7 +249,7 @@ namespace Login_Window
 
                 //Console.WriteLine("Key {0}, Username: {1}, Password: {2}, First name: {3}, Middle name: {4}, Last name: {5}, Status {6}\n", Userlist[i].usrs, Userlist[i].usrs.usrname, Userlist[i].usrs.pswd, Userlist[i].usrs.fname, Userlist[i].usrs.mname, Userlist[i].usrs.lname, Userlist[i].usrs.s);
             }
-            using (StreamWriter writer = new StreamWriter(@"C:\Users\turtl\Desktop\UserDatabase.txt"))
+            using (StreamWriter writer = new StreamWriter(@"C:\Users\katie\Downloads\UserDatabase.txt"))
             {
                 for (int currentLine = 0; currentLine <= lines.Length - 1; ++currentLine) //finds the line in the text file to edit and overwrites it.
                 {
@@ -264,7 +265,7 @@ namespace Login_Window
             }
             listBox4.Items.Clear();
             Userdatabase.Clear();
-            string[] lines2 = System.IO.File.ReadAllLines(@"C:\Users\turtl\Desktop\UserDatabase.txt");
+            string[] lines2 = System.IO.File.ReadAllLines(@"C:\Users\katie\Downloads\UserDatabase.txt");
             foreach (string line in lines2)
             {
                 // Use a tab to indent each line of the file.
@@ -306,6 +307,18 @@ namespace Login_Window
         {
             AddUserForm newUserForm = new AddUserForm();
             newUserForm.Show();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Faculty facultyForm = new Faculty("dumFac");
+            facultyForm.Show();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            AddDrop addForm = new AddDrop("dumStu");
+            addForm.Show();
         }
     }
 }

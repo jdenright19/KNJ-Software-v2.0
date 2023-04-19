@@ -1,43 +1,26 @@
-using Form;
+﻿using Form;
 using Login_GUI;
-using static System.Windows.Forms.LinkLabel;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Login_Window
 {
-    public partial class Login_Window : System.Windows.Forms.Form
+    public partial class New_Login_Window : System.Windows.Forms.Form
     {
         public static string username1;
         public static string password2;
         Boolean invalid = false;
         Boolean invalid2 = true;
-        public Login_Window()
+        public New_Login_Window()
         {
             InitializeComponent();
-
-        }
-
-
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-
-
-        }
-
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
-        {
-
-
-
-        }
-
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-
-
         }
 
         private void cbx_showPassword_CheckedChanged(object sender, EventArgs e)
@@ -45,14 +28,17 @@ namespace Login_Window
             txb_passWord.UseSystemPasswordChar = false;
         }
 
+        private void txb_passWord_TextChanged(object sender, EventArgs e)
+        {
 
+        }
 
-        private void btn_login_Click_1(object sender, EventArgs e)
+        private void btn_login_Click(object sender, EventArgs e)
         {
             //shows form one need to make if else statment that brings up errors and moves onto class list.
             //var Form1 = new Form1();
             //Form1.Show();
-            string[] lines = System.IO.File.ReadAllLines(@"C:\SE Repos\UserDatabase.txt");
+            string[] lines = System.IO.File.ReadAllLines(@"C:\Users\katie\Downloads\UserDatabase.txt");
 
 
             List<String> Userdatabase = new List<String>();
@@ -122,45 +108,9 @@ namespace Login_Window
                 formWin error = new formWin();
                 error.Show();
             }
-
         }
 
         private void txb_userName_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txb_passWord_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cbx_showPassword_CheckedChanged_1(object sender, EventArgs e)
-        {
-            //txb_passWord_TextChanged.useSystemPassChar = false;
-        }
-
-        private void pictureBox1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lbl_softwareName_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lnk_forgotPassword_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-
-        }
-
-        private void lbl_password_Click(object sender, EventArgs e)
         {
 
         }
