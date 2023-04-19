@@ -207,6 +207,8 @@ namespace Login_Window
         {
              string[] lines = System.IO.File.ReadAllLines(@"C:\Users\turtl\Desktop\UserDatabase.txt");
             List<String> Userdatabase = new List<String>();
+            string[] lines3 = System.IO.File.ReadAllLines(@"C:\Users\turtl\Desktop\CourseHistoryDatabase.txt");
+            List<String> CourseHistoryDatabase = new List<String>();
             var Userlist = new Dictionary<int, dynamic>();
 
             foreach (string line in lines)
@@ -216,6 +218,14 @@ namespace Login_Window
                 Console.WriteLine("\n" + line);
 
             }
+            foreach (string line in lines3)
+            {
+                // Use a tab to indent each line of the file.
+                CourseHistoryDatabase.Add(line);
+                Console.WriteLine("\n" + line);
+
+            }
+
             for (int i = 0; i < Userdatabase.Count(); i++)
             {
                 string[] Userstring = Userdatabase[i].Split(' ');
