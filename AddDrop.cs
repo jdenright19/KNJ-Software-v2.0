@@ -89,7 +89,7 @@ namespace Form
 
         private void Drop_btn_Click(object sender, EventArgs e)
         {
-            string[] lines3 = System.IO.File.ReadAllLines(@"C:\Users\turtl\Desktop\CourseHistoryDatabase.txt");
+            string[] lines3 = System.IO.File.ReadAllLines(@"C:\Users\katie\OneDrive\Desktop\Databases SE\CourseHistoryDatabase.txt");
             List<String> CourseHistory = new List<String>();
             var Historylist = new Dictionary<int, dynamic>();
             foreach (string line in lines3)
@@ -131,7 +131,7 @@ namespace Form
                     replacementLine += " ";
                     replacementLine += "N";
 
-                    string[] lines5 = File.ReadAllLines(@"C:\Users\turtl\Desktop\CourseHistoryDatabase.txt");
+                    string[] lines5 = File.ReadAllLines(@"C:\Users\katie\OneDrive\Desktop\Databases SE\CourseHistoryDatabase.txt");
                     
                     string oldLine = lines5[line_to_edit];
                     string[] splitText = oldLine.Split(replacementLine);
@@ -157,7 +157,7 @@ namespace Form
 
                     
                     // Write the new file over the old file.
-                    using (StreamWriter writer = new StreamWriter(@"C:\Users\turtl\Desktop\CourseHistoryDatabase.txt"))
+                    using (StreamWriter writer = new StreamWriter(@"C:\Users\katie\OneDrive\Desktop\Databases SE\CourseHistoryDatabase.txt"))
                     {
                         for (int currentLine = 0; currentLine <= lines5.Length - 1; ++currentLine) //finds the line in the text file to edit and overwrites it.
                         {
@@ -306,7 +306,11 @@ namespace Form
                     break;
                 }
 
-                string numSeats = courseInfo[4]; // number of seats info
+                string numSeats = (Convert.ToInt32(courseInfo[4]) -1).ToString(); // number of seats info
+
+                //function to iterate the course num seats
+
+
 
                 //Need to translate these into actual times
                 string timeBlocks = courseInfo[5]; // how many time blocks this course has
