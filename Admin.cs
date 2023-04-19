@@ -69,7 +69,7 @@ namespace Login_Window
             }
 
             // This is loading in the users into the correct places
-            for (int i = 0; i < Userdatabase.Count() - 1; i++)
+            for (int i = 0; i < Userdatabase.Count(); i++)
             {
                 if ((Userlist[i].usrs.s == "admin"))
                 { listBox1.Items.Add(Userlist[i].usrs.usrname + " " + Userlist[i].usrs.s); }
@@ -321,7 +321,7 @@ namespace Login_Window
             }
 
             // This is loading in the users into the correct places
-            for (int i = 0; i < Userdatabase.Count() - 1; i++)
+            for (int i = 0; i < Userdatabase.Count(); i++)
             {
                 if ((Userlist[i].usrs.s == "admin"))
                 { listBox1.Items.Add(Userlist[i].usrs.usrname); }
@@ -335,7 +335,10 @@ namespace Login_Window
         {
             AddUserForm newUserForm = new AddUserForm();
             newUserForm.Show();
+            this.Close();
+
         }
+
 
         private void button4_Click(object sender, EventArgs e)
         {

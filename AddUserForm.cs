@@ -79,7 +79,8 @@ namespace Login_Window
             textBox6.Text = tempstring;
             File.AppendAllText(@"C:\Users\turtl\Desktop\UserDatabase.txt", tempstring + Environment.NewLine);
             File.AppendAllText(@"C:\Users\turtl\Desktop\CourseHistoryDatabase.txt", username + " " + "0" + Environment.NewLine);
-
+            Admin refreshedForm = new Admin();
+            refreshedForm.Show();
         }
 
         private void textBox6_TextChanged(object sender, EventArgs e)
