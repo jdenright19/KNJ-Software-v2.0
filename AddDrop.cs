@@ -27,16 +27,16 @@ namespace Form
         List<String> currentSchedNames = new List<String>(); //this is a internal list of what classes the student is enrolled into
         List<String> currentSchedTimes = new List<String>(); // and the time those classes occur
         float creditTot = 0; // This allows us to know the credit total in this form.
-
+        string selectedClass;
         int line_to_edit;
-
-
+        string replacementString;
+        int line_to_replace;
         public AddDrop(string user)
         {
             InitializeComponent();
             List<String> Coursedatabase = new List<String>();
             //string[] lines2 = System.IO.File.ReadAllLines(@"C:\SE Repos\CourseDatabase.txt");
-            string[] lines2 = System.IO.File.ReadAllLines(@"C:\Users\katie\OneDrive\Desktop\Databases SE\CourseDatabase.txt");
+            string[] lines2 = System.IO.File.ReadAllLines(@"C:\Users\turtl\Desktop\CourseDatabase.txt");
             this.user = user;
 
             //Katie's Pathway : C:\Users\katie\Downloads\main-master\main-master\CourseDatabase.txt
@@ -89,16 +89,94 @@ namespace Form
 
         private void Drop_btn_Click(object sender, EventArgs e)
         {
-            string[] lines3 = System.IO.File.ReadAllLines(@"C:\Users\katie\OneDrive\Desktop\Databases SE\CourseHistoryDatabase.txt");
+            string[] lines3 = System.IO.File.ReadAllLines(@"C:\Users\turtl\Desktop\CourseHistoryDatabase.txt");
             List<String> CourseHistory = new List<String>();
             var Historylist = new Dictionary<int, dynamic>();
+            int newSeatNum;
+            string[] lines4 = System.IO.File.ReadAllLines(@"C:\Users\turtl\Desktop\CourseDatabase.txt");
+            List<String> Courselist = new List<String>();
+            var CourseDic = new Dictionary<int, dynamic>();
+            
             foreach (string line in lines3)
             {
                 // Use a tab to indent each line of the file.
                 CourseHistory.Add(line);
-                Console.WriteLine("\n" + line);
+                //Console.WriteLine("\n" + line);
 
             }
+            foreach (string line in lines4)
+            {
+                // Use a tab to indent each line of the file.
+                Courselist.Add(line);
+                //Console.WriteLine("\n" + line);
+
+            }
+            for (int i = dataGridView1.Rows.Count - 1; i >= 0; i--) //loops through our dataTable and finds any rows with a checked index, if the index is checked that whole row gets removed.
+            {
+                DataGridViewRow dataGridViewRow = dataGridView1.Rows[i];
+
+                if (Convert.ToBoolean(dataGridView1.Rows[i].Cells[9].Value) == true)
+                {
+                    line_to_replace = i;
+                }
+            }
+            for (int p = 0; p < Courselist.Count; p++)
+            {
+                string[] classString = Courselist[p].Split(" ");
+                string classNum = classString[0];
+                string classNam = classString[1];
+                string faculty = classString[2];
+                string creditTot = classString[3];
+                string numSeats = classString[4];
+                string numTimeBlocks = classString[5];
+                string timeBlock1 = classString[6];
+                if (numTimeBlocks == "2")
+                {
+                    string timeBlock2 = classString[7];
+                }
+                  
+                if (classNum == (string)dataGridView1.Rows[line_to_replace].Cells[0].Value)
+                  
+                {
+                    line_to_edit = p;
+                    newSeatNum = int.Parse(numSeats);
+                    newSeatNum += 1;
+                    replacementString = classNum;
+                    replacementString += " ";
+                    replacementString += classNam;
+                    replacementString += " ";
+                    replacementString += faculty;
+                    replacementString += " ";
+                    replacementString += creditTot;
+                    replacementString += " ";
+                    replacementString += newSeatNum.ToString();
+                    replacementString += " ";
+                    replacementString += numTimeBlocks;
+                    replacementString += " ";
+                    replacementString += timeBlock1;
+                    if (numTimeBlocks == "2")
+                    {
+                        replacementString += " ";
+                        replacementString += classString[7];
+                    }
+                }
+            }
+
+            using (StreamWriter writer = new StreamWriter(@"C:\Users\turtl\Desktop\CourseDatabase.txt"))
+            {
+                for (int currentLine = 0; currentLine <= lines4.Length - 1; ++currentLine) //finds the line in the text file to edit and overwrites it.
+                {
+                    if (currentLine == line_to_edit)
+                    {
+                        writer.WriteLine(replacementString);
+                    }
+                    else
+                    {
+                        writer.WriteLine(lines4[currentLine]);
+                    }
+                }
+            }
+
             for (int l = 0; l < CourseHistory.Count; l++)
             {
                 string[] Historystring = CourseHistory[l].Split(' '); //reading in the coursehistory
@@ -109,6 +187,7 @@ namespace Form
                 Historylist[l].usrs = "User" + l;
                 Historylist[l].usrs = new { usrname = username, courseNum = numCourses2 };
             }
+
                 for (int b = 0; b < Historylist.Count; b++)
                 {
                     if (user == Historylist[b].usrs.usrname)
@@ -131,7 +210,7 @@ namespace Form
                     replacementLine += " ";
                     replacementLine += "N";
 
-                    string[] lines5 = File.ReadAllLines(@"C:\Users\katie\OneDrive\Desktop\Databases SE\CourseHistoryDatabase.txt");
+                    string[] lines5 = File.ReadAllLines(@"C:\Users\turtl\Desktop\CourseHistoryDatabase.txt");
                     
                     string oldLine = lines5[line_to_edit];
                     string[] splitText = oldLine.Split(replacementLine);
@@ -157,7 +236,7 @@ namespace Form
 
                     
                     // Write the new file over the old file.
-                    using (StreamWriter writer = new StreamWriter(@"C:\Users\katie\OneDrive\Desktop\Databases SE\CourseHistoryDatabase.txt"))
+                    using (StreamWriter writer = new StreamWriter(@"C:\Users\turtl\Desktop\CourseHistoryDatabase.txt"))
                     {
                         for (int currentLine = 0; currentLine <= lines5.Length - 1; ++currentLine) //finds the line in the text file to edit and overwrites it.
                         {
@@ -197,18 +276,70 @@ namespace Form
             bool nameCheck = false; // this name check that we will use later to make sure we aren't adding any of the same courses twice
             bool timeCheck = false; // this is a time check that we will use later to make sure we aren't adding any courses to the schedule that have time conflicts
             bool credCheck = false;
-
-
+            string[] lines6 = System.IO.File.ReadAllLines(@"C:\Users\turtl\Desktop\CourseDatabase.txt");
+            string[] lines4 = System.IO.File.ReadAllLines(@"C:\Users\turtl\Desktop\CourseHistoryDatabase.txt");
+            List<String> courseList = new List<String>();
             foreach (string item in checkedListBox1.CheckedItems) // for each course that was checked...
             {
 
                 courses.Add(item); // we will add the string to the course list
+                selectedClass = item.ToString();
 
+                
+            }
+            string[] classSplit = selectedClass.Split(" ");
+            string numSeats1 = classSplit[4];
+            int numberSeats = int.Parse(numSeats1);
+            numberSeats -= 1;
+            string newString1 = classSplit[0];
+            newString1 += " ";
+            newString1 += classSplit[1];
+            newString1 += " ";
+            newString1 += classSplit[2];
+            newString1 += " ";
+            newString1 += classSplit[3];
+            newString1 += " ";
+            newString1 += numberSeats.ToString();
+            newString1 += " ";
+            newString1 += classSplit[5];
+            newString1 += " ";
+            newString1 += classSplit[6];
+            newString1 += " ";
+            if (classSplit[5] == "2")
+            {
+                newString1 += classSplit[7];
+                //newString1 += " ";
+            }
+           
+
+            foreach (string line in lines6)
+            {
+                courseList.Add(line);
             }
 
-             // this is setting the template for the new rows I am going to make later
+            for (int p = 0; p < courseList.Count(); p++)
+            {
+                if (selectedClass == courseList[p])
+                {
+                    line_to_edit = p;
+                }
+            }
+            // this is setting the template for the new rows I am going to make later
 
-
+            using (StreamWriter writer = new StreamWriter(@"C:\Users\turtl\Desktop\CourseDatabase.txt"))
+            {
+                for (int currentLine = 0; currentLine <= lines6.Length - 1; ++currentLine) //finds the line in the text file to edit and overwrites it.
+                {
+                    if (currentLine == line_to_edit)
+                    {
+                        writer.WriteLine(newString1);
+                    }
+                    else
+                    {
+                        writer.WriteLine(lines6[currentLine]);
+                    }
+                }
+            }
 
             for (int i = 0; i < courses.Count; i++) // we are now going to look through the course list
 
@@ -224,7 +355,7 @@ namespace Form
                 //course history check
                 List<String> historyData = new List<String>();
                 var history = new Dictionary<String, List<String>>();
-                string[] lines = System.IO.File.ReadAllLines(@"C:\Users\katie\OneDrive\Desktop\Databases SE\CourseHistoryDatabase.txt");
+                string[] lines = System.IO.File.ReadAllLines(@"C:\Users\turtl\Desktop\CourseHistoryDatabase.txt");
                 System.Console.WriteLine("Contents of Course History:");
                 foreach (string line in lines)
                 {
@@ -377,7 +508,7 @@ namespace Form
                         string extraTimeBlock = courseInfo[7];
                         
                     }
-                    string[] lines3 = System.IO.File.ReadAllLines(@"C:\Users\katie\OneDrive\Desktop\Databases SE\CourseHistoryDatabase.txt");
+                    string[] lines3 = System.IO.File.ReadAllLines(@"C:\Users\turtl\Desktop\CourseHistoryDatabase.txt");
                     List<String> CourseHistory = new List<String>();
                     var Historylist = new Dictionary<int, dynamic>();
                     foreach (string line in lines3)
@@ -458,10 +589,10 @@ namespace Form
                             newString += " ";
                             newString += "N";
                            
-                            string[] lines5 = File.ReadAllLines(@"C:\Users\katie\OneDrive\Desktop\Databases SE\CourseHistoryDatabase.txt");
+                            string[] lines5 = File.ReadAllLines(@"C:\Users\turtl\Desktop\CourseHistoryDatabase.txt");
                             string lineToWrite = newString;
                             // Write the new file over the old file.
-                            using (StreamWriter writer = new StreamWriter(@"C:\Users\katie\OneDrive\Desktop\Databases SE\CourseHistoryDatabase.txt"))
+                            using (StreamWriter writer = new StreamWriter(@"C:\Users\turtl\Desktop\CourseHistoryDatabase.txt"))
                             {
                                 for (int currentLine = 0; currentLine <= lines5.Length -1; ++currentLine) //finds the line in the text file to edit and overwrites it.
                                 {
