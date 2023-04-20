@@ -10,10 +10,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static Login_Window.AddUserForm;
+using static System.Windows.Forms.LinkLabel;
+
 namespace Login_Window
 {
     public partial class Admin : System.Windows.Forms.Form
     {
+        string curCourse;
         string tempUser;
         int line_to_edit;
         int itemToRemove;
@@ -102,7 +105,7 @@ namespace Login_Window
             // *************** SHOULD ADD THE PROFS NAME TO THE ROSTER TOO *********************
 
             listBox6.Items.Clear();
-            string curCourse = listBox2.SelectedItem.ToString();
+            curCourse = listBox2.SelectedItem.ToString();
 
             string courseNum = curCourse.Substring(0, curCourse.IndexOf(' '));
             //string courseName = curCourse.Substring(curCourse.IndexOf(courseNum), curCourse.IndexOf(' '));
@@ -350,6 +353,61 @@ namespace Login_Window
         {
             AddDrop addForm = new AddDrop("dumStu");
             addForm.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            List<String> Coursedatabase = new List<String>();
+            string[] courses = System.IO.File.ReadAllLines(@"C:\Users\turtl\Desktop\CourseDatabase.txt");
+            foreach (string line in courses)
+            {
+                // Use a tab to indent each line of the file.
+                Coursedatabase.Add(line);
+                //Console.WriteLine("\n" + line);
+            }
+            for (int i = 0; i < Coursedatabase.Count(); i++)
+            {
+                if (curCourse == Coursedatabase[i])
+                {
+                    line_to_edit = i;
+                    string[] tempSplit = Coursedatabase[i].Split(" ");
+                    string courseName = tempSplit[0]; 
+                    courseDeletionForm deleteForm = new courseDeletionForm(courseName);
+                    deleteForm.Show();
+                }
+            }
+            using (StreamWriter writer = new StreamWriter(@"C:\Users\turtl\Desktop\CourseDatabase.txt"))
+            {
+                for (int currentLine = 0; currentLine <= courses.Length - 1; ++currentLine) //finds the line in the text file to edit and overwrites it.
+                {
+                    if (currentLine == line_to_edit)
+                    {
+                        //writer.WriteLine(""); //skips over the rewrite to delete selected users.
+                    }
+                    else
+                    {
+                        writer.WriteLine(courses[currentLine]);
+                    }
+                }
+            }
+
+            listBox2.Items.Clear();
+            var Courselist = new Dictionary<int, dynamic>();
+            List<String> Coursedatabase2 = new List<String>();
+            string[] lines2 = System.IO.File.ReadAllLines(@"C:\Users\turtl\Desktop\CourseDatabase.txt");
+            //System.Console.WriteLine("Contents of Course database");
+
+            foreach (string line in lines2)
+            {
+                // Use a tab to indent each line of the file.
+                Coursedatabase2.Add(line);
+                Console.WriteLine("\n" + line);
+            }
+
+            for (int i = 0; i < Coursedatabase2.Count; i++)
+            {
+                listBox2.Items.Add(Coursedatabase2[i]);
+            }
         }
     }
 }

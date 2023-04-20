@@ -81,7 +81,7 @@
             // 
             this.listBox2.FormattingEnabled = true;
             this.listBox2.ItemHeight = 15;
-            this.listBox2.Location = new System.Drawing.Point(22, 42);
+            this.listBox2.Location = new System.Drawing.Point(30, 42);
             this.listBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.listBox2.Name = "listBox2";
             this.listBox2.Size = new System.Drawing.Size(326, 304);
@@ -239,6 +239,7 @@
             this.button3.TabIndex = 6;
             this.button3.Text = "Delete Course";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // listBox6
             // 
