@@ -119,15 +119,15 @@ namespace Login_Window
 
             if (listBox1.SelectedIndex >= 0)
             {
-                string instructSwitch = listBox1.Items; //need to find correct syntax
-                editedCourse = editedCourse + " " + instructSwitch;
+                //string instructSwitch = listBox1.Items; //need to find correct syntax
+                //editedCourse = editedCourse + " " + instructSwitch;
             }
             else
             {
                 editedCourse = editedCourse + " " + courseInstruct;
             }
 
-            if (string.IsNullOrEmpty(textBox1.Text) != true || string.IsNullOrEmpty(textBox2.Text) != true || string.IsNullOrEmpty(textBox3.text) != true || string.IsNullOrEmpty(textBox4.text) != true)
+            if (string.IsNullOrEmpty(textBox1.Text) != true || string.IsNullOrEmpty(textBox2.Text) != true || string.IsNullOrEmpty(textBox3.Text) != true || string.IsNullOrEmpty(textBox4.Text) != true)
             {
                 string startTimeHours = textBox1.Text.ToString();
                 string startTimeMinutes = textBox2.Text.ToString();
@@ -168,7 +168,7 @@ namespace Login_Window
 
                 //int32.parse(OrginalTime)
 
-                if ()
+                //
 
 
 

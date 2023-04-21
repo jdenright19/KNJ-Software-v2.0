@@ -413,5 +413,10 @@ namespace Login_Window
                 listBox2.Items.Add(Coursedatabase2[i]);
             }
         }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
