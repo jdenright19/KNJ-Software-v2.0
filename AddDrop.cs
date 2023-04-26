@@ -36,7 +36,7 @@ namespace Form
             InitializeComponent();
             List<String> Coursedatabase = new List<String>();
             //string[] lines2 = System.IO.File.ReadAllLines(@"C:\SE Repos\CourseDatabase.txt");
-            string[] lines2 = System.IO.File.ReadAllLines(@"C:\Users\turtl\Desktop\CourseDatabase.txt");
+            string[] lines2 = System.IO.File.ReadAllLines(@"C:\Users\katie\OneDrive\Desktop\Databases SE\CourseDatabase.txt");
             this.user = user;
 
             //Katie's Pathway : C:\Users\katie\Downloads\main-master\main-master\CourseDatabase.txt
@@ -89,11 +89,11 @@ namespace Form
 
         private void Drop_btn_Click(object sender, EventArgs e)
         {
-            string[] lines3 = System.IO.File.ReadAllLines(@"C:\Users\turtl\Desktop\CourseHistoryDatabase.txt");
+            string[] lines3 = System.IO.File.ReadAllLines(@"C:\Users\katie\OneDrive\Desktop\Databases SE\CourseHistoryDatabase.txt");
             List<String> CourseHistory = new List<String>();
             var Historylist = new Dictionary<int, dynamic>();
             int newSeatNum;
-            string[] lines4 = System.IO.File.ReadAllLines(@"C:\Users\turtl\Desktop\CourseDatabase.txt");
+            string[] lines4 = System.IO.File.ReadAllLines(@"C:\Users\katie\OneDrive\Desktop\Databases SE\CourseDatabase.txt");
             List<String> Courselist = new List<String>();
             var CourseDic = new Dictionary<int, dynamic>();
             
@@ -162,7 +162,7 @@ namespace Form
                 }
             }
 
-            using (StreamWriter writer = new StreamWriter(@"C:\Users\turtl\Desktop\CourseDatabase.txt"))
+            using (StreamWriter writer = new StreamWriter(@"C:\Users\katie\OneDrive\Desktop\Databases SE\CourseDatabase.txt"))
             {
                 for (int currentLine = 0; currentLine <= lines4.Length - 1; ++currentLine) //finds the line in the text file to edit and overwrites it.
                 {
@@ -210,7 +210,7 @@ namespace Form
                     replacementLine += " ";
                     replacementLine += "N";
 
-                    string[] lines5 = File.ReadAllLines(@"C:\Users\turtl\Desktop\CourseHistoryDatabase.txt");
+                    string[] lines5 = File.ReadAllLines(@"C:\Users\katie\OneDrive\Desktop\Databases SE\CourseHistoryDatabase.txt");
                     
                     string oldLine = lines5[line_to_edit];
                     string[] splitText = oldLine.Split(replacementLine);
@@ -236,7 +236,7 @@ namespace Form
 
                     
                     // Write the new file over the old file.
-                    using (StreamWriter writer = new StreamWriter(@"C:\Users\turtl\Desktop\CourseHistoryDatabase.txt"))
+                    using (StreamWriter writer = new StreamWriter(@"C:\Users\katie\OneDrive\Desktop\Databases SE\CourseHistoryDatabase.txt"))
                     {
                         for (int currentLine = 0; currentLine <= lines5.Length - 1; ++currentLine) //finds the line in the text file to edit and overwrites it.
                         {
@@ -276,8 +276,8 @@ namespace Form
             bool nameCheck = false; // this name check that we will use later to make sure we aren't adding any of the same courses twice
             bool timeCheck = false; // this is a time check that we will use later to make sure we aren't adding any courses to the schedule that have time conflicts
             bool credCheck = false;
-            string[] lines6 = System.IO.File.ReadAllLines(@"C:\Users\turtl\Desktop\CourseDatabase.txt");
-            string[] lines4 = System.IO.File.ReadAllLines(@"C:\Users\turtl\Desktop\CourseHistoryDatabase.txt");
+            string[] lines6 = System.IO.File.ReadAllLines(@"C:\Users\katie\OneDrive\Desktop\Databases SE\CourseDatabase.txt");
+            string[] lines4 = System.IO.File.ReadAllLines(@"C:\Users\katie\OneDrive\Desktop\Databases SE\CourseHistoryDatabase.txt");
             List<String> courseList = new List<String>();
             foreach (string item in checkedListBox1.CheckedItems) // for each course that was checked...
             {
@@ -326,7 +326,7 @@ namespace Form
             }
             // this is setting the template for the new rows I am going to make later
 
-            using (StreamWriter writer = new StreamWriter(@"C:\Users\turtl\Desktop\CourseDatabase.txt"))
+            using (StreamWriter writer = new StreamWriter(@"C:\Users\katie\OneDrive\Desktop\Databases SE\CourseDatabase.txt"))
             {
                 for (int currentLine = 0; currentLine <= lines6.Length - 1; ++currentLine) //finds the line in the text file to edit and overwrites it.
                 {
@@ -355,7 +355,7 @@ namespace Form
                 //course history check
                 List<String> historyData = new List<String>();
                 var history = new Dictionary<String, List<String>>();
-                string[] lines = System.IO.File.ReadAllLines(@"C:\Users\turtl\Desktop\CourseHistoryDatabase.txt");
+                string[] lines = System.IO.File.ReadAllLines(@"C:\Users\katie\OneDrive\Desktop\Databases SE\CourseHistoryDatabase.txt");
                 System.Console.WriteLine("Contents of Course History:");
                 foreach (string line in lines)
                 {
@@ -508,7 +508,7 @@ namespace Form
                         string extraTimeBlock = courseInfo[7];
                         
                     }
-                    string[] lines3 = System.IO.File.ReadAllLines(@"C:\Users\turtl\Desktop\CourseHistoryDatabase.txt");
+                    string[] lines3 = System.IO.File.ReadAllLines(@"C:\Users\katie\OneDrive\Desktop\Databases SE\CourseHistoryDatabase.txt");
                     List<String> CourseHistory = new List<String>();
                     var Historylist = new Dictionary<int, dynamic>();
                     foreach (string line in lines3)
@@ -589,10 +589,10 @@ namespace Form
                             newString += " ";
                             newString += "N";
                            
-                            string[] lines5 = File.ReadAllLines(@"C:\Users\turtl\Desktop\CourseHistoryDatabase.txt");
+                            string[] lines5 = File.ReadAllLines(@"C:\Users\katie\OneDrive\Desktop\Databases SE\CourseHistoryDatabase.txt");
                             string lineToWrite = newString;
                             // Write the new file over the old file.
-                            using (StreamWriter writer = new StreamWriter(@"C:\Users\turtl\Desktop\CourseHistoryDatabase.txt"))
+                            using (StreamWriter writer = new StreamWriter(@"C:\Users\katie\OneDrive\Desktop\Databases SE\CourseHistoryDatabase.txt"))
                             {
                                 for (int currentLine = 0; currentLine <= lines5.Length -1; ++currentLine) //finds the line in the text file to edit and overwrites it.
                                 {
