@@ -32,6 +32,27 @@
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.label10 = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button8 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.CourseNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CourseName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Instructor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Credit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NumSeats = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numTimeBlocks = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Days = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.timeStart = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TimeEnd = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Select = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.listBox7 = new System.Windows.Forms.ListBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.button7 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -52,6 +73,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage4.SuspendLayout();
+            this.tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -62,18 +85,20 @@
             this.tabPage4.BackColor = System.Drawing.Color.BurlyWood;
             this.tabPage4.Controls.Add(this.button5);
             this.tabPage4.Controls.Add(this.button4);
-            this.tabPage4.Location = new System.Drawing.Point(4, 29);
+            this.tabPage4.Location = new System.Drawing.Point(4, 24);
+            this.tabPage4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(1229, 879);
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabPage4.Size = new System.Drawing.Size(1074, 656);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Adminstrative";
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(226, 413);
+            this.button5.Location = new System.Drawing.Point(198, 310);
+            this.button5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(697, 384);
+            this.button5.Size = new System.Drawing.Size(610, 288);
             this.button5.TabIndex = 1;
             this.button5.Text = "Student View";
             this.button5.UseVisualStyleBackColor = true;
@@ -81,9 +106,10 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(226, 41);
+            this.button4.Location = new System.Drawing.Point(198, 31);
+            this.button4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(697, 336);
+            this.button4.Size = new System.Drawing.Size(610, 252);
             this.button4.TabIndex = 0;
             this.button4.Text = "Faculty View";
             this.button4.UseVisualStyleBackColor = true;
@@ -92,12 +118,208 @@
             // tabPage3
             // 
             this.tabPage3.BackColor = System.Drawing.Color.BurlyWood;
-            this.tabPage3.Location = new System.Drawing.Point(4, 29);
+            this.tabPage3.Controls.Add(this.label10);
+            this.tabPage3.Controls.Add(this.textBox3);
+            this.tabPage3.Controls.Add(this.label9);
+            this.tabPage3.Controls.Add(this.textBox2);
+            this.tabPage3.Controls.Add(this.label8);
+            this.tabPage3.Controls.Add(this.textBox1);
+            this.tabPage3.Controls.Add(this.button8);
+            this.tabPage3.Controls.Add(this.button6);
+            this.tabPage3.Controls.Add(this.dataGridView1);
+            this.tabPage3.Controls.Add(this.listBox7);
+            this.tabPage3.Controls.Add(this.label7);
+            this.tabPage3.Location = new System.Drawing.Point(4, 24);
+            this.tabPage3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1229, 879);
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabPage3.Size = new System.Drawing.Size(1074, 656);
             this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Schedule Confirmations";
+            this.tabPage3.Text = "Course Confirmation";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(476, 88);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(187, 15);
+            this.label10.TabIndex = 23;
+            this.label10.Text = "Number of Classes Taken/Enrolled";
+            this.label10.Click += new System.EventHandler(this.label10_Click);
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(669, 144);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(250, 23);
+            this.textBox3.TabIndex = 22;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(447, 144);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(216, 15);
+            this.label9.TabIndex = 21;
+            this.label9.Text = "Number of Courses That need Approval";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(669, 88);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(250, 23);
+            this.textBox2.TabIndex = 20;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(564, 42);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(99, 15);
+            this.label8.TabIndex = 19;
+            this.label8.Text = "Student\'s Advisor";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(669, 39);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(250, 23);
+            this.textBox1.TabIndex = 18;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // button8
+            // 
+            this.button8.Location = new System.Drawing.Point(289, 224);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(75, 23);
+            this.button8.TabIndex = 17;
+            this.button8.Text = "Deny";
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(57, 224);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(75, 23);
+            this.button6.TabIndex = 16;
+            this.button6.Text = "Approve";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click_1);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.Sienna;
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.CourseNum,
+            this.CourseName,
+            this.Instructor,
+            this.Credit,
+            this.NumSeats,
+            this.numTimeBlocks,
+            this.Days,
+            this.timeStart,
+            this.TimeEnd,
+            this.Select});
+            this.dataGridView1.Location = new System.Drawing.Point(39, 263);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.Size = new System.Drawing.Size(1000, 345);
+            this.dataGridView1.TabIndex = 15;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // CourseNum
+            // 
+            this.CourseNum.HeaderText = "Course Number";
+            this.CourseNum.MinimumWidth = 6;
+            this.CourseNum.Name = "CourseNum";
+            this.CourseNum.Width = 125;
+            // 
+            // CourseName
+            // 
+            this.CourseName.HeaderText = "Course Name";
+            this.CourseName.MinimumWidth = 6;
+            this.CourseName.Name = "CourseName";
+            this.CourseName.Width = 125;
+            // 
+            // Instructor
+            // 
+            this.Instructor.HeaderText = "Instructor";
+            this.Instructor.MinimumWidth = 6;
+            this.Instructor.Name = "Instructor";
+            this.Instructor.Width = 125;
+            // 
+            // Credit
+            // 
+            this.Credit.HeaderText = "Credit";
+            this.Credit.MinimumWidth = 6;
+            this.Credit.Name = "Credit";
+            this.Credit.Width = 125;
+            // 
+            // NumSeats
+            // 
+            this.NumSeats.HeaderText = "Number of Seats";
+            this.NumSeats.MinimumWidth = 6;
+            this.NumSeats.Name = "NumSeats";
+            this.NumSeats.Width = 125;
+            // 
+            // numTimeBlocks
+            // 
+            this.numTimeBlocks.HeaderText = "Number of Time Blocks";
+            this.numTimeBlocks.MinimumWidth = 6;
+            this.numTimeBlocks.Name = "numTimeBlocks";
+            this.numTimeBlocks.Width = 125;
+            // 
+            // Days
+            // 
+            this.Days.HeaderText = "Days";
+            this.Days.MinimumWidth = 6;
+            this.Days.Name = "Days";
+            this.Days.Width = 125;
+            // 
+            // timeStart
+            // 
+            this.timeStart.HeaderText = "Time Start";
+            this.timeStart.MinimumWidth = 6;
+            this.timeStart.Name = "timeStart";
+            this.timeStart.Width = 125;
+            // 
+            // TimeEnd
+            // 
+            this.TimeEnd.HeaderText = "Time End";
+            this.TimeEnd.MinimumWidth = 6;
+            this.TimeEnd.Name = "TimeEnd";
+            this.TimeEnd.Width = 125;
+            // 
+            // Select
+            // 
+            this.Select.HeaderText = "Select";
+            this.Select.MinimumWidth = 6;
+            this.Select.Name = "Select";
+            this.Select.Width = 125;
+            // 
+            // listBox7
+            // 
+            this.listBox7.FormattingEnabled = true;
+            this.listBox7.ItemHeight = 15;
+            this.listBox7.Location = new System.Drawing.Point(57, 33);
+            this.listBox7.Name = "listBox7";
+            this.listBox7.Size = new System.Drawing.Size(325, 184);
+            this.listBox7.TabIndex = 1;
+            this.listBox7.SelectedIndexChanged += new System.EventHandler(this.listBox7_SelectedIndexChanged_1);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(39, 15);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(325, 15);
+            this.label7.TabIndex = 0;
+            this.label7.Text = "Students that still need their schedules approved/confrimed.";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // tabPage2
             // 
@@ -108,25 +330,28 @@
             this.tabPage2.Controls.Add(this.label6);
             this.tabPage2.Controls.Add(this.label2);
             this.tabPage2.Controls.Add(this.listBox2);
-            this.tabPage2.Location = new System.Drawing.Point(4, 29);
+            this.tabPage2.Location = new System.Drawing.Point(4, 24);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1229, 879);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabPage2.Size = new System.Drawing.Size(1074, 656);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Course Overview";
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(177, 625);
+            this.button7.Location = new System.Drawing.Point(155, 469);
+            this.button7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(75, 23);
+            this.button7.Size = new System.Drawing.Size(66, 17);
             this.button7.TabIndex = 0;
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(29, 618);
+            this.button3.Location = new System.Drawing.Point(25, 464);
+            this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(133, 37);
+            this.button3.Size = new System.Drawing.Size(116, 28);
             this.button3.TabIndex = 6;
             this.button3.Text = "Delete Course";
             this.button3.UseVisualStyleBackColor = true;
@@ -135,28 +360,29 @@
             // listBox6
             // 
             this.listBox6.FormattingEnabled = true;
-            this.listBox6.ItemHeight = 20;
-            this.listBox6.Location = new System.Drawing.Point(499, 75);
+            this.listBox6.ItemHeight = 15;
+            this.listBox6.Location = new System.Drawing.Point(437, 56);
+            this.listBox6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.listBox6.Name = "listBox6";
-            this.listBox6.Size = new System.Drawing.Size(403, 404);
+            this.listBox6.Size = new System.Drawing.Size(353, 304);
             this.listBox6.TabIndex = 5;
             this.listBox6.SelectedIndexChanged += new System.EventHandler(this.listBox6_SelectedIndexChanged);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(513, 52);
+            this.label6.Location = new System.Drawing.Point(449, 39);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(106, 20);
+            this.label6.Size = new System.Drawing.Size(85, 15);
             this.label6.TabIndex = 4;
             this.label6.Text = "Course Rosters";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(17, 33);
+            this.label2.Location = new System.Drawing.Point(15, 25);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(182, 20);
+            this.label2.Size = new System.Drawing.Size(145, 15);
             this.label2.TabIndex = 3;
             this.label2.Text = "Courses Offered This Term";
             this.label2.Click += new System.EventHandler(this.label2_Click);
@@ -164,10 +390,11 @@
             // listBox2
             // 
             this.listBox2.FormattingEnabled = true;
-            this.listBox2.ItemHeight = 20;
-            this.listBox2.Location = new System.Drawing.Point(29, 75);
+            this.listBox2.ItemHeight = 15;
+            this.listBox2.Location = new System.Drawing.Point(25, 56);
+            this.listBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(425, 524);
+            this.listBox2.Size = new System.Drawing.Size(372, 394);
             this.listBox2.TabIndex = 2;
             this.listBox2.SelectedIndexChanged += new System.EventHandler(this.listBox2_SelectedIndexChanged);
             // 
@@ -184,10 +411,11 @@
             this.tabPage1.Controls.Add(this.listBox3);
             this.tabPage1.Controls.Add(this.listBox1);
             this.tabPage1.Controls.Add(this.label1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 29);
+            this.tabPage1.Location = new System.Drawing.Point(4, 24);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1184, 879);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabPage1.Size = new System.Drawing.Size(1074, 656);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "User Overview";
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
@@ -195,27 +423,29 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(450, 451);
+            this.label5.Location = new System.Drawing.Point(394, 338);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(116, 20);
+            this.label5.Size = new System.Drawing.Size(94, 15);
             this.label5.TabIndex = 9;
             this.label5.Text = "Faculty Advisees";
             // 
             // listBox5
             // 
             this.listBox5.FormattingEnabled = true;
-            this.listBox5.ItemHeight = 20;
-            this.listBox5.Location = new System.Drawing.Point(450, 473);
+            this.listBox5.ItemHeight = 15;
+            this.listBox5.Location = new System.Drawing.Point(394, 355);
+            this.listBox5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.listBox5.Name = "listBox5";
-            this.listBox5.Size = new System.Drawing.Size(341, 344);
+            this.listBox5.Size = new System.Drawing.Size(299, 259);
             this.listBox5.TabIndex = 8;
             this.listBox5.SelectedIndexChanged += new System.EventHandler(this.listBox5_SelectedIndexChanged);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(18, 604);
+            this.button2.Location = new System.Drawing.Point(16, 453);
+            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(167, 33);
+            this.button2.Size = new System.Drawing.Size(146, 25);
             this.button2.TabIndex = 7;
             this.button2.Text = "Add New User";
             this.button2.UseVisualStyleBackColor = true;
@@ -223,9 +453,10 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(18, 555);
+            this.button1.Location = new System.Drawing.Point(16, 416);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(102, 33);
+            this.button1.Size = new System.Drawing.Size(89, 25);
             this.button1.TabIndex = 6;
             this.button1.Text = "Delete User";
             this.button1.UseVisualStyleBackColor = true;
@@ -234,58 +465,59 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(815, 21);
+            this.label4.Location = new System.Drawing.Point(713, 16);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(66, 20);
+            this.label4.Size = new System.Drawing.Size(53, 15);
             this.label4.TabIndex = 5;
             this.label4.Text = "Students";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(450, 21);
+            this.label3.Location = new System.Drawing.Point(394, 16);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(54, 20);
+            this.label3.Size = new System.Drawing.Size(45, 15);
             this.label3.TabIndex = 4;
             this.label3.Text = "Faculty";
             // 
             // listBox4
             // 
             this.listBox4.FormattingEnabled = true;
-            this.listBox4.ItemHeight = 20;
-            this.listBox4.Location = new System.Drawing.Point(815, 44);
+            this.listBox4.ItemHeight = 15;
+            this.listBox4.Location = new System.Drawing.Point(713, 33);
+            this.listBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.listBox4.Name = "listBox4";
-            this.listBox4.Size = new System.Drawing.Size(334, 784);
+            this.listBox4.Size = new System.Drawing.Size(293, 589);
             this.listBox4.TabIndex = 3;
             this.listBox4.SelectedIndexChanged += new System.EventHandler(this.listBox4_SelectedIndexChanged);
             // 
             // listBox3
             // 
             this.listBox3.FormattingEnabled = true;
-            this.listBox3.ItemHeight = 20;
-            this.listBox3.Location = new System.Drawing.Point(450, 44);
+            this.listBox3.ItemHeight = 15;
+            this.listBox3.Location = new System.Drawing.Point(394, 33);
+            this.listBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.listBox3.Name = "listBox3";
-            this.listBox3.Size = new System.Drawing.Size(341, 384);
+            this.listBox3.Size = new System.Drawing.Size(299, 289);
             this.listBox3.TabIndex = 2;
             this.listBox3.SelectedIndexChanged += new System.EventHandler(this.listBox3_SelectedIndexChanged);
             // 
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 20;
-            this.listBox1.Location = new System.Drawing.Point(18, 44);
-            this.listBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.listBox1.ItemHeight = 15;
+            this.listBox1.Location = new System.Drawing.Point(16, 33);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(404, 504);
+            this.listBox1.Size = new System.Drawing.Size(354, 379);
             this.listBox1.TabIndex = 0;
             this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(18, 13);
+            this.label1.Location = new System.Drawing.Point(16, 10);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 20);
+            this.label1.Size = new System.Drawing.Size(43, 15);
             this.label1.TabIndex = 1;
             this.label1.Text = "Admin";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -296,22 +528,28 @@
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
-            this.tabControl1.Location = new System.Drawing.Point(12, 12);
+            this.tabControl1.Location = new System.Drawing.Point(10, 9);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabControl1.Multiline = true;
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1237, 912);
+            this.tabControl1.Size = new System.Drawing.Size(1082, 684);
             this.tabControl1.TabIndex = 4;
             // 
             // Admin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Info;
-            this.ClientSize = new System.Drawing.Size(1277, 936);
+            this.ClientSize = new System.Drawing.Size(1117, 702);
             this.Controls.Add(this.tabControl1);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Admin";
             this.Text = "Admin";
             this.tabPage4.ResumeLayout(false);
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             this.tabPage1.ResumeLayout(false);
@@ -347,5 +585,25 @@
         private Button button4;
         private Button button6;
         private Button button7;
+        private Label label7;
+        private ListBox listBox7;
+        private Label label10;
+        private TextBox textBox3;
+        private Label label9;
+        private TextBox textBox2;
+        private Label label8;
+        private TextBox textBox1;
+        private Button button8;
+        private DataGridView dataGridView1;
+        private DataGridViewTextBoxColumn CourseNum;
+        private DataGridViewTextBoxColumn CourseName;
+        private DataGridViewTextBoxColumn Instructor;
+        private DataGridViewTextBoxColumn Credit;
+        private DataGridViewTextBoxColumn NumSeats;
+        private DataGridViewTextBoxColumn numTimeBlocks;
+        private DataGridViewTextBoxColumn Days;
+        private DataGridViewTextBoxColumn timeStart;
+        private DataGridViewTextBoxColumn TimeEnd;
+        private DataGridViewCheckBoxColumn Select;
     }
 }

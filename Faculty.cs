@@ -41,7 +41,7 @@ namespace Login_Window
             System.Console.WriteLine("Contents of Course database");
 
             List<String> Userdatabase = new List<String>();
-            string[] users = System.IO.File.ReadAllLines(@"C:\Users\katie\OneDrive\Desktop\Databases SE\UserDatabase.txt");
+            string[] users = System.IO.File.ReadAllLines(@"C:\Users\turtl\Desktop\UserDatabase.txt");
 
             foreach (string line in lines2)
             {
@@ -772,7 +772,7 @@ namespace Login_Window
                 }
 
             }
-            using (StreamWriter writer = new StreamWriter(@"C:\Users\turtl\Desktop\KNJ-Software-v2.0.4\F2023 Confrimation Database.txt"))
+            using (StreamWriter writer = new StreamWriter(@"C:\Users\turtl\Desktop\KNJ-Software-v2.0.9\F2023 Confrimation Database.txt"))
             {
                 for (int currentLine = 0; currentLine <= lines.Length - 1; ++currentLine) //finds the line in the text file to edit and overwrites it.
                 {
