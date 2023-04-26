@@ -62,7 +62,7 @@ namespace Login_Window
             for (int i = 0; i < CourseConfirmationdatabase.Count(); i++)
             {
                 string[] confrimationSplit = CourseConfirmationdatabase[i].Split(" ");
-                if (confrimationSplit.Count() != 1)
+                if (confrimationSplit.Count() > 1)
                 {
                     string user = confrimationSplit[0];
                     string status = confrimationSplit[1];
