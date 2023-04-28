@@ -89,7 +89,11 @@ namespace Login_Window
             for (int i = 0; i < Userdatabase.Count; i++)
             {
                 string[] Userstring = Userdatabase[i].Split(" ");
-                string advisor = Userstring[5];
+                string advisor = "";
+                if (Userstring.Length == 6)
+                {
+                     advisor = Userstring[5];
+                }
                 if (FacultyName == advisor)
                 { 
                     string advisee = Userstring[2] + " " + Userstring[3] + " " + Userstring[4];

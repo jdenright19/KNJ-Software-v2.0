@@ -16,7 +16,7 @@ namespace Login_Window
         public AddUserForm()
         {
             InitializeComponent();
-            string[] lines = System.IO.File.ReadAllLines(@"C:\Users\katie\OneDrive\Desktop\Databases SE\UserDatabase.txt");
+            string[] lines = System.IO.File.ReadAllLines(@"C:\SE Repos\UserDatabase.txt");
             List<String> Userdatabase = new List<String>();
             foreach (string line in lines)
             {
@@ -77,8 +77,8 @@ namespace Login_Window
             tempstring += " ";
             tempstring += status;
             textBox6.Text = tempstring;
-            File.AppendAllText(@"C:\Users\katie\OneDrive\Desktop\Databases SE\UserDatabase.txt", tempstring + Environment.NewLine);
-            File.AppendAllText(@"C:\Users\katie\OneDrive\Desktop\Databases SE\CourseHistoryDatabase.txt", username + " " + "0" + Environment.NewLine);
+            File.AppendAllText(@"C:\SE Repos\UserDatabase.txt", tempstring + Environment.NewLine);
+            File.AppendAllText(@"C:\SE Repos\CourseHistoryDatabase.txt", username + " " + "0" + Environment.NewLine);
             Admin refreshedForm = new Admin();
             refreshedForm.Show();
         }

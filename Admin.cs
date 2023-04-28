@@ -9,7 +9,7 @@ using System.Drawing;
 using System.Drawing.Design;
 using System.Linq;
 using System.Security.Policy;
-using System.Text;
+using System.Text;frdcxfgrtdsxcfrdesxcfrtgdsxz
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
@@ -101,13 +101,17 @@ namespace Login_Window
 
             for (int i = 0; i < Userdatabase.Count(); i++)
             {
+                string status = "";
                 string[] Userstring = Userdatabase[i].Split(' ');
                 string username = Userstring[0];
                 string password = Userstring[1];
                 string firstname = Userstring[2];
                 string middlename = Userstring[3];
                 string lastname = Userstring[4];
-                string status = Userstring[5];
+                if (Userstring.Length == 6)
+                {
+                     status = Userstring[5];
+                }
                 dynamic d1 = new System.Dynamic.ExpandoObject();
                 Userlist[i] = d1;
                 Userlist[i].usrs = "User" + i;
@@ -300,13 +304,16 @@ namespace Login_Window
 
             for (int i = 0; i < Userdatabase.Count(); i++)
             {
+                string status = "";
                 string[] Userstring = Userdatabase[i].Split(' ');
                 string username = Userstring[0];
                 string password = Userstring[1];
                 string firstname = Userstring[2];
                 string middlename = Userstring[3];
                 string lastname = Userstring[4];
-                string status = Userstring[5];
+                if (Userstring.Length == 6) { 
+                     status = Userstring[5];
+            }
                 dynamic d1 = new System.Dynamic.ExpandoObject();
                 Userlist[i] = d1;
                 Userlist[i].usrs = "User" + i;
