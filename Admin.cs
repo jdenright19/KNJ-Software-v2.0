@@ -31,6 +31,9 @@ namespace Login_Window
         int line_to_replace;
         string replacementString;
         string curStudent;
+        public string user { get; set; }
+        public string course { get; set; }
+
         public Admin()
         {
 
@@ -141,8 +144,8 @@ namespace Login_Window
             // *************** SHOULD ADD THE PROFS NAME TO THE ROSTER TOO *********************
 
             listBox6.Items.Clear();
-            curCourse = listBox2.SelectedItem.ToString();
-
+            string curCourse = listBox2.SelectedItem.ToString();
+            course = curCourse;
             string courseNum = curCourse.Substring(0, curCourse.IndexOf(' '));
             //string courseName = curCourse.Substring(curCourse.IndexOf(courseNum), curCourse.IndexOf(' '));
             //string profName = "Instructor: " + curCourse.Substring(curCourse.IndexOf(courseName), curCourse.IndexOf(' '));
@@ -1045,6 +1048,18 @@ namespace Login_Window
 
                 }
             }
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            Course_Edits_Window edit = new Course_Edits_Window(course);
+            edit.Show();
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            Change_Advisor changeAdvis = new Change_Advisor(user);
+            changeAdvis.Show();
         }
     }
 
