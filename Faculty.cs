@@ -100,9 +100,6 @@ namespace Login_Window
             
 
 
-
-
-
         }
 
 
@@ -119,7 +116,7 @@ namespace Login_Window
             //code fine up to here
 
             //string[] OGCourseDataBase = System.IO.File.ReadAllLines(@"C:\Users\katie\OneDrive\Desktop\Databases SE\OrginalCourseHistoryDatabase.txt");
-            string[] CourseHisDataBase = System.IO.File.ReadAllLines(@"C:\Users\katie\OneDrive\Desktop\Databases SE\CourseDatabase.txt");
+            string[] CourseHisDataBase = System.IO.File.ReadAllLines(@"C:\SE Repos\CourseDatabase.txt");
             List<string> addedCoursesDataBase = new List<string>();
 
             foreach (string line in CourseHisDataBase)

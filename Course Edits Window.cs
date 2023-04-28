@@ -250,6 +250,8 @@ namespace Login_Window
                 
             }
 
+            this.Close();
+
 
 
 
