@@ -248,9 +248,9 @@ namespace Login_Window
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string[] lines = System.IO.File.ReadAllLines(@"C:\Users\katie\OneDrive\Desktop\Databases SE\UserDatabase.txt");
+            string[] lines = System.IO.File.ReadAllLines(@"C:\SE Repos\UserDatabase.txt");
             List<String> Userdatabase = new List<String>();
-            string[] lines3 = System.IO.File.ReadAllLines(@"C:\Users\katie\OneDrive\Desktop\Databases SE\CourseHistoryDatabase.txt");
+            string[] lines3 = System.IO.File.ReadAllLines(@"C:\SE Repos\CourseHistoryDatabase.txt");
             List<String> CourseHistoryDatabase = new List<String>();
             var Userlist = new Dictionary<int, dynamic>();
 
@@ -292,7 +292,7 @@ namespace Login_Window
                 //Console.WriteLine("Key {0}, Username: {1}, Password: {2}, First name: {3}, Middle name: {4}, Last name: {5}, Status {6}\n", Userlist[i].usrs, Userlist[i].usrs.usrname, Userlist[i].usrs.pswd, Userlist[i].usrs.fname, Userlist[i].usrs.mname, Userlist[i].usrs.lname, Userlist[i].usrs.s);
             }
 
-            using (StreamWriter writer = new StreamWriter(@"C:\Users\katie\OneDrive\Desktop\Databases SE\UserDatabase.txt"))
+            using (StreamWriter writer = new StreamWriter(@"C:\SE Repos\UserDatabase.txt"))
             {
                 for (int currentLine = 0; currentLine <= lines.Length - 1; ++currentLine) //finds the line in the text file to edit and overwrites it.
                 {
@@ -317,7 +317,7 @@ namespace Login_Window
 
                 //Console.WriteLine("Key {0}, Username: {1}, Password: {2}, First name: {3}, Middle name: {4}, Last name: {5}, Status {6}\n", Userlist[i].usrs, Userlist[i].usrs.usrname, Userlist[i].usrs.pswd, Userlist[i].usrs.fname, Userlist[i].usrs.mname, Userlist[i].usrs.lname, Userlist[i].usrs.s);
             }
-            using (StreamWriter writer = new StreamWriter(@"C:\Users\katie\OneDrive\Desktop\Databases SE\CourseHistoryDatabase.txt"))
+            using (StreamWriter writer = new StreamWriter(@"C:\SE Repos\CourseHistoryDatabase.txt"))
             {
                 for (int currentLine = 0; currentLine <= lines3.Length - 1; ++currentLine) //finds the line in the text file to edit and overwrites it.
                 {
@@ -335,7 +335,7 @@ namespace Login_Window
             listBox3.Items.Clear();
             listBox1.Items.Clear();
             Userdatabase.Clear();
-            string[] lines2 = System.IO.File.ReadAllLines(@"C:\Users\katie\OneDrive\Desktop\Databases SE\UserDatabase.txt");
+            string[] lines2 = System.IO.File.ReadAllLines(@"C:\SE Repos\UserDatabase.txt");
             foreach (string line in lines2)
             {
                 // Use a tab to indent each line of the file.
@@ -396,44 +396,29 @@ namespace Login_Window
 
         private void button3_Click(object sender, EventArgs e)
         {
+            string CourseToEdit = listBox2.GetItemText(listBox2.SelectedItem);
             List<String> Coursedatabase = new List<String>();
-            string[] courses = System.IO.File.ReadAllLines(@"C:\Users\katie\OneDrive\Desktop\Databases SE\CourseDatabase.txt");
-            foreach (string line in courses)
+            string[] courses = System.IO.File.ReadAllLines(@"C:\SE Repos\CourseDatabase.txt");
+            foreach (string course in courses)
             {
-                // Use a tab to indent each line of the file.
-                Coursedatabase.Add(line);
-                //Console.WriteLine("\n" + line);
+                if (course != CourseToEdit)
+                { Coursedatabase.Add(course); }
+
             }
-            for (int i = 0; i < Coursedatabase.Count(); i++)
-            {
-                if (curCourse == Coursedatabase[i])
+
+            System.IO.File.WriteAllText(@"C:\SE Repos\CourseDatabase.txt", string.Empty);
+
+            foreach (string course in Coursedatabase)
+                using (StreamWriter sw = File.AppendText(@"C:\SE Repos\CourseDatabase.txt")) //appending the line to the course data base
                 {
-                    line_to_edit = i;
-                    string[] tempSplit = Coursedatabase[i].Split(" ");
-                    string courseName = tempSplit[0];
-                    courseDeletionForm deleteForm = new courseDeletionForm(courseName);
-                    deleteForm.Show();
+                    sw.WriteLine(course);
+
                 }
-            }
-            using (StreamWriter writer = new StreamWriter(@"C:\Users\katie\OneDrive\Desktop\Databases SE\CourseDatabase.txt"))
-            {
-                for (int currentLine = 0; currentLine <= courses.Length - 1; ++currentLine) //finds the line in the text file to edit and overwrites it.
-                {
-                    if (currentLine == line_to_edit)
-                    {
-                        //writer.WriteLine(""); //skips over the rewrite to delete selected users.
-                    }
-                    else
-                    {
-                        writer.WriteLine(courses[currentLine]);
-                    }
-                }
-            }
 
             listBox2.Items.Clear();
             var Courselist = new Dictionary<int, dynamic>();
             List<String> Coursedatabase2 = new List<String>();
-            string[] lines2 = System.IO.File.ReadAllLines(@"C:\Users\katie\OneDrive\Desktop\Databases SE\CourseDatabase.txt");
+            string[] lines2 = System.IO.File.ReadAllLines(@"C:\SE Repos\CourseDatabase.txt");
             //System.Console.WriteLine("Contents of Course database");
 
             foreach (string line in lines2)
@@ -447,6 +432,58 @@ namespace Login_Window
             {
                 listBox2.Items.Add(Coursedatabase2[i]);
             }
+
+            //List<String> Coursedatabase = new List<String>();
+            //string[] courses = System.IO.File.ReadAllLines(@"C:\SE Repos\CourseDatabase.txt");
+            //foreach (string line in courses)
+            //{
+            //    // Use a tab to indent each line of the file.
+            //    Coursedatabase.Add(line);
+            //    //Console.WriteLine("\n" + line);
+            //}
+            //for (int i = 0; i < Coursedatabase.Count(); i++)
+            //{
+            //    if (curCourse == Coursedatabase[i])
+            //    {
+            //        line_to_edit = i;
+            //        string[] tempSplit = Coursedatabase[i].Split(" ");
+            //        string courseName = tempSplit[0];
+            //        courseDeletionForm deleteForm = new courseDeletionForm(courseName);
+            //        deleteForm.Show();
+            //    }
+            //}
+            //using (StreamWriter writer = new StreamWriter(@"C:\SE Repos\CourseDatabase.txt"))
+            //{
+            //    for (int currentLine = 0; currentLine <= courses.Length - 1; ++currentLine) //finds the line in the text file to edit and overwrites it.
+            //    {
+            //        if (currentLine == line_to_edit)
+            //        {
+            //            //writer.WriteLine(""); //skips over the rewrite to delete selected users.
+            //        }
+            //        else
+            //        {
+            //            writer.WriteLine(courses[currentLine]);
+            //        }
+            //    }
+            //}
+
+            //listBox2.Items.Clear();
+            //var Courselist = new Dictionary<int, dynamic>();
+            //List<String> Coursedatabase2 = new List<String>();
+            //string[] lines2 = System.IO.File.ReadAllLines(@"C:\SE Repos\CourseDatabase.txt");
+            ////System.Console.WriteLine("Contents of Course database");
+
+            //foreach (string line in lines2)
+            //{
+            //    // Use a tab to indent each line of the file.
+            //    Coursedatabase2.Add(line);
+            //    Console.WriteLine("\n" + line);
+            //}
+
+            //for (int i = 0; i < Coursedatabase2.Count; i++)
+            //{
+            //    listBox2.Items.Add(Coursedatabase2[i]);
+            //}
         }
 
         private void tabPage1_Click(object sender, EventArgs e)
