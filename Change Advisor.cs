@@ -20,9 +20,9 @@ namespace Login_Window
             List<String> Coursedatabase = new List<String>();
             List<String> CourseConfirmationdatabase = new List<String>();
             var Courselist = new Dictionary<int, dynamic>();
-            string[] lines2 = System.IO.File.ReadAllLines(@"C:\Users\katie\OneDrive\Desktop\Databases SE\CourseDatabase.txt");
+            string[] lines2 = System.IO.File.ReadAllLines(@"C:\SE Repos\CourseDatabase.txt");
             System.Console.WriteLine("Contents of Course database");
-            string[] courseConfirmationLines = System.IO.File.ReadAllLines(@"C:\Users\katie\OneDrive\Desktop\Databases SE\F2023 Confrimation Database.txt");
+            string[] courseConfirmationLines = System.IO.File.ReadAllLines(@"C:\SE Repos\F2023 Confrimation Database.txt");
             foreach (string line in lines2)
             {
                 // Use a tab to indent each line of the file.
@@ -39,7 +39,7 @@ namespace Login_Window
             
        
 
-            string[] lines = System.IO.File.ReadAllLines(@"C:\Users\katie\OneDrive\Desktop\Databases SE\UserDatabase.txt");
+            string[] lines = System.IO.File.ReadAllLines(@"C:\SE Repos\UserDatabase.txt");
             List<String> Userdatabase = new List<String>();
             var Userlist = new Dictionary<int, dynamic>();
 
@@ -93,6 +93,53 @@ namespace Login_Window
 
 
 
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            String newAdv = listBox1.GetItemText(listBox1.SelectedItem);
+
+            string[] lines = System.IO.File.ReadAllLines(@"C:\SE Repos\UserDatabase.txt");
+            List<String> Userdatabase = new List<String>();
+            var Userlist = new Dictionary<int, dynamic>();
+
+
+            System.IO.File.WriteAllText(@"C:\SE Repos\UserDatabase.txt", string.Empty);
+
+            foreach (string line in lines) //line 244
+            {
+                // Use a tab to indent each line of the file.
+                string[] userSplit = line.Split(' ');
+                if (userSplit[0] == user)
+                {
+                    String fixline = line.Replace(userSplit[5], newAdv);
+                    using (StreamWriter sw = File.AppendText(@"C:\SE Repos\UserDatabase.txt"))
+                    {
+                        sw.Write(fixline);
+                        sw.Write('\n');
+                    }
+                }
+
+                else {
+                    using (StreamWriter sw = File.AppendText(@"C:\SE Repos\UserDatabase.txt"))
+                    {
+                        sw.Write(line);
+                        sw.Write('\n');
+                    }
+                }
+
+
+                
+                Console.WriteLine("\n" + line);
+
+            }
+
+
+        }
+
+        private void Change_Advisor_Load(object sender, EventArgs e)
+        {
 
         }
     }

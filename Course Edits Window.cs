@@ -21,7 +21,7 @@ namespace Login_Window
 
             InitializeComponent();
             this.CourseToEdit = courseToEdit;
-            string[] lines = System.IO.File.ReadAllLines(@"C:\Users\katie\OneDrive\Desktop\Databases SE\UserDatabase.txt");
+            string[] lines = System.IO.File.ReadAllLines(@"C:\SE Repos\UserDatabase.txt");
             List<String> Userdatabase = new List<String>();
             var Userlist = new Dictionary<int, dynamic>();
 
@@ -232,7 +232,7 @@ namespace Login_Window
 
 
             List<String> Coursedatabase = new List<String>();
-            string[] courses = System.IO.File.ReadAllLines(@"C:\Users\katie\OneDrive\Desktop\Databases SE\CourseDatabase.txt");
+            string[] courses = System.IO.File.ReadAllLines(@"C:\SE Repos\CourseDatabase.txt");
             foreach (string course in courses)
             {
                 if (course != CourseToEdit)
@@ -241,10 +241,10 @@ namespace Login_Window
             }
             Coursedatabase.Add(editedCourse);
 
-            System.IO.File.WriteAllText(@"C:\Users\katie\OneDrive\Desktop\Databases SE\CourseDatabase.txt", string.Empty);
+            System.IO.File.WriteAllText(@"C:\SE Repos\CourseDatabase.txt", string.Empty);
 
             foreach (string course in Coursedatabase)
-            using (StreamWriter sw = File.AppendText(@"C:\Users\katie\OneDrive\Desktop\Databases SE\CourseDatabase.txt")) //appending the line to the course data base
+            using (StreamWriter sw = File.AppendText(@"C:\SE Repos\CourseDatabase.txt")) //appending the line to the course data base
             {
                 sw.WriteLine(course);
                 

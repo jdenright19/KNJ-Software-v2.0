@@ -42,9 +42,9 @@ namespace Login_Window
             List<String> Coursedatabase = new List<String>();
             List<String> CourseConfirmationdatabase = new List<String>();
             var Courselist = new Dictionary<int, dynamic>();
-            string[] lines2 = System.IO.File.ReadAllLines(@"C:\Users\katie\OneDrive\Desktop\Databases SE\CourseDatabase.txt");
+            string[] lines2 = System.IO.File.ReadAllLines(@"C:\SE Repos\CourseDatabase.txt");
             System.Console.WriteLine("Contents of Course database");
-            string[] courseConfirmationLines = System.IO.File.ReadAllLines(@"C:\Users\katie\OneDrive\Desktop\Databases SE\F2023 Confrimation Database.txt");
+            string[] courseConfirmationLines = System.IO.File.ReadAllLines(@"C:\SE Repos\F2023 Confrimation Database.txt");
             foreach (string line in lines2)
             {
                 // Use a tab to indent each line of the file.
@@ -77,7 +77,7 @@ namespace Login_Window
 
             }
 
-            string[] lines = System.IO.File.ReadAllLines(@"C:\Users\katie\OneDrive\Desktop\Databases SE\UserDatabase.txt");
+            string[] lines = System.IO.File.ReadAllLines(@"C:\SE Repos\UserDatabase.txt");
             List<String> Userdatabase = new List<String>();
             var Userlist = new Dictionary<int, dynamic>();
 
@@ -153,7 +153,7 @@ namespace Login_Window
             //listBox6.Items.Add(profName);
 
             //string[] OGCourseDataBase = System.IO.File.ReadAllLines(@"C:\Users\katie\OneDrive\Desktop\Databases SE\OrginalCourseHistoryDatabase.txt");
-            string[] CourseHisDataBase = System.IO.File.ReadAllLines(@"C:\Users\katie\OneDrive\Desktop\Databases SE\CourseHistoryDatabase.txt");
+            string[] CourseHisDataBase = System.IO.File.ReadAllLines(@"C:\SE Repos\CourseHistoryDatabase.txt");
             List<string> addedCoursesDataBase = new List<string>();
 
             foreach (string line in CourseHisDataBase)
@@ -1058,7 +1058,8 @@ namespace Login_Window
 
         private void button9_Click(object sender, EventArgs e)
         {
-            Change_Advisor changeAdvis = new Change_Advisor(user);
+            String selectStu = listBox4.GetItemText(listBox4.SelectedItem);
+            Change_Advisor changeAdvis = new Change_Advisor(selectStu);
             changeAdvis.Show();
         }
     }
