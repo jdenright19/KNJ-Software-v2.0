@@ -1276,7 +1276,7 @@ namespace Login_Window
             }
             for (int i = dataGridView2.Rows.Count - 1; i >= 0; i--) //loops through our dataTable and finds any rows with a checked index, if the index is checked that whole row gets removed.
             {
-                DataGridViewRow dataGridViewRow = dataGridView1.Rows[i];
+                DataGridViewRow dataGridViewRow = dataGridView2.Rows[i];
 
                 if (Convert.ToBoolean(dataGridView2.Rows[i].Cells[9].Value) == true)
                 {
@@ -1339,10 +1339,6 @@ namespace Login_Window
 
 
             }
-
-
-
-
 
 
 
@@ -1566,7 +1562,7 @@ namespace Login_Window
 
 
                     //Adding the things in the desired places
-                    int index = dataGridView1.Rows.Add(); //creates new row
+                    int index = dataGridView2.Rows.Add(); //creates new row
                     dataGridView2.Rows[index].Cells[0].Value = courseNumber; //enters values into their specified collumns
                     dataGridView2.Rows[index].Cells[1].Value = courseName;
                     dataGridView2.Rows[index].Cells[2].Value = instructor;
